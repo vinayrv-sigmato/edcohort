@@ -482,17 +482,26 @@ if(empty($courseid)){
                                                                     </a>
                                                                 </div>
                                                             <?php } 
-                                                    } ?>
+                                                     ?>
 
                                                 </div>
 
                                                 <div class="see-row"><a href="<?php echo base_url(); ?>brands">See all <img src="<?php echo base_url(); ?>assets/images/see-arrow.png" alt="" /></a></div>
-
+                                                <?php } 
+                                                     ?>
                                             </div>
                                         </div>
                                         <!--row end-->
 
                                         <!--row start-->
+                                        <?php 
+                                                    $resp_get_course = getseg_course_list($courseid);
+                                                  
+                                                    if($resp_get_course)
+                                                        {
+                                                          // print_R($resp_get_brand);
+                                                          //exit;
+                                                ?>
                                         <div class="course-row article-section" id="Popular-Courses">
                                             <div class="course-inner-row">
 
@@ -503,20 +512,13 @@ if(empty($courseid)){
                                                 </div>
 
                                                 <div class="popular-row">
-                                                 <?php 
-                                                    $resp_get_course = getseg_course_list($courseid);
-                                                   // print_R($resp_get_course);
-                                                   // exit;
-                                                    /*if($resp_get_brand)
-                                                        {
-                                                            }*/
-                                                ?>
+                                                 
                                                  <?php foreach($resp_get_course as $course){?>
                                                     <!--col-->
                                                     <div class="popular-col">
                                                         <a href="<?php echo base_url(); ?>review?course=<?php echo $course->product_id; ?>">
                                                             <div class="popular-col-image">
-                                                                <img src="<?php echo base_url(); ?><?php echo $course->image_show; ?>" alt="<?php echo $course->product_name; ?>" width="50">
+                                                                <img src="<?php echo base_url(); ?><?php echo $course->product_image; ?>" alt="<?php echo $course->product_name; ?>" width="50">
                                                             </div>
                                                             <h3>
                                                                 <?php echo $course->product_name; ?>
@@ -574,7 +576,9 @@ if(empty($courseid)){
                                             </div>
                                         </div>
                                         <!--row end-->
-                                    <?php } ?>
+                                    <?php 
+                                       }
+                                 }  ?>
 
 <!-- Popular Brands --->
                   <!--<div class="brand-align pt-5 content-bg">
@@ -670,7 +674,7 @@ if(empty($courseid)){
                     <div class="row">
                         <div class="col-md-6">
                             <h4>Counselling</h4>
-                                        <h4 class="subheading">All projects include GetLance Payment Protection — helping ensure that you get paid for all work successfully completed through the freelancing website.</h4>
+                                        <h4 class="subheading">All projects include GetLance Payment Protection ï¿½ helping ensure that you get paid for all work successfully completed through the freelancing website.</h4>
                                         <p class="text-muted img-sub-heading">All invoices and payments happen through GetLance. Count on a simple and streamlined process.
                                             Hourly and fixed-price projects. For hourly work, submit timesheets through GetLance. For fixed-price jobs, set milestones and funds are released via GetLance escrow features.
                                             Multiple payment options. Choose a payment method that works best for you, from direct deposit or PayPal to wire transfer and more.</p>
@@ -698,7 +702,7 @@ if(empty($courseid)){
                      <div class="row">
                         <div class="col-md-6">
                             <h4>Coupons</h4>
-                                        <h4 class="subheading">All projects include GetLance Payment Protection — helping ensure that you get paid for all work successfully completed through the freelancing website.</h4>
+                                        <h4 class="subheading">All projects include GetLance Payment Protection ï¿½ helping ensure that you get paid for all work successfully completed through the freelancing website.</h4>
                                         <p class="text-muted img-sub-heading">All invoices and payments happen through GetLance. Count on a simple and streamlined process.
                                             Hourly and fixed-price projects. For hourly work, submit timesheets through GetLance. For fixed-price jobs, set milestones and funds are released via GetLance escrow features.
                                             Multiple payment options. Choose a payment method that works best for you, from direct deposit or PayPal to wire transfer and more.</p>
