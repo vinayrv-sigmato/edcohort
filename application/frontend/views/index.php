@@ -183,7 +183,8 @@ $sort_by = $this->input->get('sort_by');
                                           <p><?php echo $class->segment_name; ?></p>
                                            <p class="card-text card-text-size">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                           <!-- <a href="<?php //echo base_url(); ?>brands/?course=<?php //echo $class->class_id; ?>" class="btn btn-primary"> select </a> -->
-                                           <a href="<?php echo base_url(); ?>?segment=<?php echo $class->id; ?>" class="btn btn-primary"> select </a>
+                                           <a href="<?php echo base_url(); ?>?segment=<?php echo $class->id; ?>" class="btn btn-primary segement-btn"> select </a>
+                                          
                                       </blockquote>
                                     </div>
                                 </div>
@@ -205,6 +206,7 @@ if(empty($courseid)){
    
 
 	?>
+   
     <!-- Overlay image -->
 
     <div class="over-lay text-center">
@@ -445,6 +447,7 @@ if(empty($courseid)){
                                                     if($resp_get_brand)
                                                     {
                                         ?>
+                                        
                                         <!--row start-->
                                         <div class="course-row article-section" id="Popular-Brands">
                                             <div class="course-inner-row">
@@ -516,7 +519,7 @@ if(empty($courseid)){
                                                  <?php foreach($resp_get_course as $course){?>
                                                     <!--col-->
                                                     <div class="popular-col">
-                                                        <a href="<?php echo base_url(); ?>review?course=<?php echo $course->product_id; ?>">
+                                                        <a href="<?php echo base_url(); ?>review?course=<?php echo $course->product_id; ?>&segment=<?php echo $class->id; ?>">
                                                             <div class="popular-col-image">
                                                                 <img src="<?php echo base_url(); ?><?php echo $course->product_image; ?>" alt="<?php echo $course->product_name; ?>" width="50">
                                                             </div>

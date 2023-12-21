@@ -8,6 +8,7 @@ $customer_rating = $this->input->get('customer_rating');
 $date_posted = $this->input->get('date_posted');
 $sort_by = $this->input->get('sort_by');
 $complaint_resolved = $this->input->get('complaint_resolved');
+$segment = $this->input->get('segment');
 ?>
 <!--banner start-->
 <div class="inner-banner">
@@ -32,8 +33,40 @@ $complaint_resolved = $this->input->get('complaint_resolved');
 <!--banner end-->
 <!--content start-->
 <div class="content">
+<div class="container-fluid review-top-section">
+
+    <div class="row">
+        <div class="col-md-1 course-img">
+   	        
+            <img src="<?php echo base_url();?>assets/images/edcohort_tp_review_logo.png"
+                              alt="">
+        </div> 
+         <div class="col-md-6 pt-3 course-name-display">
+            <h1>Course Name</h1>
+            <div>
+              <span class="rating-btn-display">4.9</span>
+               <label for="rating2" class="rating-display"><img src="<?php echo base_url();?>assets/images/rating-4.png"
+                              alt=""> </label>
+            </div>
+            <div class="pt-3 total-review-display">
+                <h4> Excellent Based on 155 - Review </h4>
+            </div>
+        </div>
+        <div class="col-md-4 pt-3 write-review-icon ">
+        <a href="<?php echo base_url();?>write-a-review?course=<?php echo @$course; ?>&segment=<?php echo $segment;?>&brand=<?php echo $brandID;?>&product_type=<?php echo  $product_type; ?>&board=<?php echo $board;?>&class=<?php echo $class;?>&batch=<?php echo $batch; ?>&customer_rating=<?php echo  $customer_rating; ?>&date=<?php echo $date_posted; ?>&sort_by=<?php echo $sort_by; ?>" class="review-btns">
+                <i class="fa-solid fa-circle-user fa-2xl design-user"></i> <span> Write a review </span> <label for="rating2"><img src="<?php echo base_url();?>assets/images/rating-1.png"
+                              alt=""> </label>
+         </a>
+
+        </div>
+        
+    </div>
+</div>
+
    <!--start-->
-   <div class="review-main-box d-flex">
+   <div class=" container-fluid review-top-section">
+   <div class="row review-top-next">
+   <div class="col-md-2 review-left">
       <button type="button" class="filter-btn">Filter</button>
       <?php //print_ex($product_list); ?>
       <!--left start-->
@@ -169,8 +202,11 @@ $complaint_resolved = $this->input->get('complaint_resolved');
             </div>
          </form>
       </div>
+                     </div>
+                     
       <!--left end-->
       <!--center start-->
+      <div class = "col-md-8">
       <div class="review-center">
          <div class="review-btn-box">
             <?php if($this->session->userdata('user_id')){ ?>
@@ -401,8 +437,10 @@ $complaint_resolved = $this->input->get('complaint_resolved');
 </div>
 </div>
 </div>
+</div>
 <!--center end-->
 <!--right start-->
+<div class="col-md-2">
 <div class="review-right">
    <div class="stick-right">
       <div class="community-side-col">
@@ -472,6 +510,7 @@ $complaint_resolved = $this->input->get('complaint_resolved');
 
   </div>
 </div> 
+</div>
    <!-- <div class="add-review-box">
       <div class="container">
           <div class="reply-box">
