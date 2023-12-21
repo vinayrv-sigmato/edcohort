@@ -7,6 +7,8 @@ $batch = $this->input->get('batch');
 $customer_rating = $this->input->get('customer_rating');
 $date_posted = $this->input->get('date_posted');
 $sort_by = $this->input->get('sort_by');
+$segment = $this->input->get('segment');
+
    // print_ex($_GET);
 ?>
 <!--banner start-->
@@ -71,10 +73,11 @@ if($get_breadcrumb)
             </div>
         </div>
         <div class="col-md-4 pt-3 write-review-icon ">
+        <a href="<?php echo base_url();?>write-a-review?course=<?php echo @$course; ?>&segment=<?php echo $segment;?>&brand=<?php echo $brandID;?>&product_type=<?php echo  $product_type; ?>&board=<?php echo $board;?>&class=<?php echo $class;?>&batch=<?php echo $batch; ?>&customer_rating=<?php echo  $customer_rating; ?>&date=<?php echo $date_posted; ?>&sort_by=<?php echo $sort_by; ?>" class="review-btns">
                 <i class="fa-solid fa-circle-user fa-2xl design-user"></i> <span> Write a review </span> <label for="rating2"><img src="<?php echo base_url();?>assets/images/rating-1.png"
                               alt=""> </label>
-            
-            
+         </a>
+
         </div>
         
     </div>

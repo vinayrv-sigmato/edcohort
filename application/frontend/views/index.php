@@ -516,7 +516,7 @@ if (empty($courseid)) {
                                 <?php foreach ($resp_get_course as $course) { ?>
                                     <!--col-->
                                     <div class="popular-col">
-                                        <a href="<?php echo base_url(); ?>review?course=<?php echo $course->product_id; ?>">
+                                        <a href="<?php echo base_url(); ?>review?course=<?php echo $course->product_id; ?>&segment=<?php echo $class->id; ?>">
                                             <div class="popular-col-image">
                                                 <img src="<?php echo base_url(); ?><?php echo $course->product_image; ?>" alt="<?php echo $course->product_name; ?>" width="50">
                                             </div>
@@ -755,8 +755,8 @@ if (empty($courseid)) {
                                             </div>
 
                                         </div>
-                                    </div>
-                                    <!--row end-->
+                                    </div> -->
+            <!--row end-->
 
 
             <!--row start-->
@@ -782,8 +782,8 @@ if (empty($courseid)) {
                                             </div>
 
                                         </div>
-                                    </div>
-                                    <!--row end-->
+                                    </div> -->
+            <!--row end-->
 
 
             <!--row start-->
@@ -809,8 +809,8 @@ if (empty($courseid)) {
                                             </div>
 
                                         </div>
-                                    </div>
-                                    <!--row end-->
+                                    </div> -->
+            <!--row end-->
 
 
             <!--row start-->
@@ -836,8 +836,8 @@ if (empty($courseid)) {
                                             </div>
 
                                         </div>
-                                    </div>
-                                    <!--row end-->
+                                    </div> -->
+            <!--row end-->
             <div class="content-bg">
                 <div class="brand-align  pt-5">
                     <h2>Popular Courses</h2>
@@ -879,8 +879,8 @@ if (empty($courseid)) {
                                             </div>
 
                                         </div>
-                                    </div>
-                                    <!--row end-->
+                                    </div> -->
+            <!--row end-->
 
 
             <!--row start-->
@@ -906,8 +906,8 @@ if (empty($courseid)) {
                                             </div>
 
                                         </div>
-                                    </div>
-                                    <!--row end-->
+                                    </div> -->
+            <!--row end-->
 
 
             <!--row start-->
@@ -933,10 +933,10 @@ if (empty($courseid)) {
                                             </div>
 
                                         </div>
-                                    </div>
-                                    
-                                    
-                                    <!--row end-->
+                                    </div> -->
+
+
+            <!--row end-->
 
 
 
