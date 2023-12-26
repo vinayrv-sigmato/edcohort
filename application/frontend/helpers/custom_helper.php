@@ -358,6 +358,22 @@ function getClassName($class_id)
         }
                 
     }
+
+    function get_all_brand()
+    {
+        $data = '';
+        $CI =& get_instance();
+       // print_R("hiii"); 
+        $data=$CI->common_model->get_all_brand();
+        if($data)
+        {
+            return $data;
+        }
+        else
+        {
+            return $data;
+        }
+    }
     
     function getseg_course_list($id)
     {

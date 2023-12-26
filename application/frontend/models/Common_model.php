@@ -335,6 +335,21 @@ class Common_model extends CI_Model {
         }
        
     }
+	function get_all_brand()
+	{
+		$query = '';
+		$this->db->select('*');
+        $this->db->from('tbl_brand b');
+		$query=$this->db->get();
+		if($query)
+        {
+            return $query->result();
+        }
+        else
+        {
+            return $query;
+        }
+	}
     
     function getseg_course_list($id)
     {
