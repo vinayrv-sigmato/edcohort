@@ -133,6 +133,38 @@
         return $c3.$c2.$c1;        
     }
 
+    function get_num_list()
+    {
+        $num_value = '';
+        $num_value = array(
+            (object) array('id' => 0, 'value' => '0'),
+            (object) array('id' => 1, 'value' => '1'),
+            (object) array('id' => 2, 'value' => '2'),
+            (object) array('id' => 3, 'value' => '3'),
+            (object) array('id' => 4, 'value' => '4'),
+            (object) array('id' => 5, 'value' => '5'),
+            (object) array('id' => 6, 'value' => '6'),
+            (object) array('id' => 7, 'value' => '7'),
+            (object) array('id' => 8, 'value' => '8'),
+            (object) array('id' => 9, 'value' => '9'),
+
+        );
+        return $num_value;  
+    }
+
+    function get_grade_list()
+    {
+        $grade_value = '';
+        $grade_value = array(
+            (object) array('id' => 0, 'value' => 'Poor'),
+            (object) array('id' => 1, 'value' => 'Fair'),
+            (object) array('id' => 2, 'value' => 'Average'),
+            (object) array('id' => 3, 'value' => 'Good'),
+            (object) array('id' => 4, 'value' => 'Excellent '),
+        );
+        return $grade_value;  
+    }
+
     function getBatchList($batch_id)
     {
         $CI =& get_instance();

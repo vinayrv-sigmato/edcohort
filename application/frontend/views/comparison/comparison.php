@@ -287,7 +287,9 @@ $segment = $this->input->get('segment');
                     </tr>
                     <tr>
                         <td>Aging of Co.</td>
-                        <?php if (!empty($compare_list1)) { ?>
+                        <?php if (!empty($compare_list1)) {
+                            print_R($compare_list1);
+                            ?>
                             <td><?php echo @$compare_list1[0]->course_complition; ?></td>
                         <?php } ?>
                         <?php if (!empty($compare_list2)) { ?>
