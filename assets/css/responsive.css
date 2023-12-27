@@ -1,247 +1,816 @@
 /*Media */
-@media(min-width:1200px) and (max-width:1366px){.filter-btn-col{width: 259px}}
+@media (min-width: 1200px) and (max-width: 1366px) {
+  .filter-btn-col {
+    width: 259px;
+  }
+}
 
-@media only screen and (max-width:1170px)
-{
-    .header { padding: 8px 15px; }
-    .sign-btn { margin-right: 10px; }
-      .sign-btn, .login-btn{ padding: 18px 30px; font-size: 16px; }
-      .search-input{ font-size: 16px; }
-      .course-left { padding: 30px 20px; width:250px;}
-    .course-right {
+@media only screen and (max-width: 1170px) {
+  .header {
+    padding: 8px 15px;
+  }
+  .sign-btn {
+    margin-right: 10px;
+  }
+  .sign-btn,
+  .login-btn {
+    padding: 18px 30px;
+    font-size: 16px;
+  }
+  .search-input {
+    font-size: 16px;
+  }
+  .course-left {
+    padding: 30px 20px;
+    width: 250px;
+  }
+  /* .course-right {
       width: calc(100% - 250px);
-    }
-    .course-left ul li a{ padding: 15px 15px;font-size: 16px; }
-    .video-row{ display: block !important; }
-    .video-content{ margin-bottom:20px; }
-    .video-content, .video-box{ max-width: 100%; }
-    .popular-col {
-      width:25%;}
-    .review-main-box { position: relative; }
-    .filter-btn{ display: block; }
-    .filter-btn-col{position: relative;}
-    .filter-btn.open{ left: 330px; }
-    .review-left{ position: absolute; left:-315px; transition: all 0.5s ease-out 0s; top:0; height: 100%; overflow: auto; z-index: 2;  } 
-    .review-left.open{ left: 0; }
+    } */
+  .course-left ul li a {
+    padding: 15px 15px;
+    font-size: 16px;
+  }
+  .video-row {
+    display: block !important;
+  }
+  .video-content {
+    margin-bottom: 20px;
+  }
+  .video-content,
+  .video-box {
+    max-width: 100%;
+  }
+  .popular-col {
+    width: 25%;
+  }
+  .review-main-box {
+    position: relative;
+  }
+  .filter-btn {
+    display: block;
+  }
+  .filter-btn-col {
+    position: relative;
+  }
+  .filter-btn.open {
+    left: 330px;
+  }
+  .review-left {
+    position: absolute;
+    left: -315px;
+    transition: all 0.5s ease-out 0s;
+    top: 0;
+    height: 100%;
+    overflow: auto;
+    z-index: 2;
+  }
+  .review-left.open {
+    left: 0;
+  }
 
-
-    .review-center{ width: calc(100% - 315px); }
-    .online-results{ font-size: 12px; margin-top: 10px; }
-    .chat-left{ left: -360px; }
-    .chat-left.open{ left:0; }
-    .calendar-modal .modal-dialog{ width: 95%; padding: 10px 20px; }
-    .date-title{ font-size: 18px; line-height: normal; }
-    .select-time-box { margin: 0 0 0 20px; }
-    .time-title{ padding: 0 5px; font-size:16px; } 
-    .time-box{ width: 200px; padding: 20px 20px;  }
-    .time-box h2{ font-size: 60px; line-height: normal; }
-    .time-box p{ font-size: 28px; line-height: normal; }
-    .time-btn{ padding: 15px 0; font-size: 16px; }
-
+  .review-center {
+    width: calc(100% - 315px);
+  }
+  .online-results {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .chat-left {
+    left: -360px;
+  }
+  .chat-left.open {
+    left: 0;
+  }
+  .calendar-modal .modal-dialog {
+    width: 95%;
+    padding: 10px 20px;
+  }
+  .date-title {
+    font-size: 18px;
+    line-height: normal;
+  }
+  .select-time-box {
+    margin: 0 0 0 20px;
+  }
+  .time-title {
+    padding: 0 5px;
+    font-size: 16px;
+  }
+  .time-box {
+    width: 200px;
+    padding: 20px 20px;
+  }
+  .time-box h2 {
+    font-size: 60px;
+    line-height: normal;
+  }
+  .time-box p {
+    font-size: 28px;
+    line-height: normal;
+  }
+  .time-btn {
+    padding: 15px 0;
+    font-size: 16px;
+  }
 }
 
+@media only screen and (max-width: 991px) {
+  .header {
+    flex-wrap: wrap;
+  }
+  .header-search {
+    order: 3;
+    width: 100%;
+  }
+  .container {
+    width: 100%;
+  }
+  .course-left {
+    display: none;
+  }
+  .course-right {
+    width: 100%;
+  }
+  .course-row {
+    padding: 30px 15px;
+  }
+  .course-section-title h2,
+  .section-title {
+    margin: 0 0 15px;
+    font-size: 24px;
+    line-height: normal;
+  }
+  .course-section-title p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .see-row a {
+    font-size: 16px;
+  }
+  .popular-col h3 {
+    font-size: 16px;
+  }
+  .course-section-title {
+    margin-bottom: 20px;
+  }
+  .video-content p {
+    font-size: 15px;
+  }
+  .tab-menu ul li a {
+    font-size: 16px;
+    padding: 15px 15px;
+  }
+  .breadcrumb ul li {
+    font-size: 14px;
+    line-height: normal;
+  }
+  .review-right {
+    padding-top: 70px;
+    padding-right: 15px;
+    width: 255px;
+  }
+  .review-center {
+    width: calc(100% - 255px);
+  }
+  .tab-link ul li a,
+  .star-col h4,
+  .score-box h3,
+  .reply-box-title {
+    line-height: normal;
+    font-size: 16px;
+  }
+  .total-review,
+  .review-read a,
+  .review-footer-left,
+  .review-footer-left a,
+  .review-footer-right a,
+  .reply-footer-left {
+    font-size: 14px;
+    line-height: normal;
+  }
+  .review-btn {
+    height: 45px;
+    font-size: 14px;
+    line-height: 45px;
+  }
+  .community-side-col h3 {
+    line-height: normal;
+    font-size: 16px;
+  }
+  .community-side-col p {
+    font-size: 14px;
+    line-height: normal;
+  }
+  .review-inner-center {
+    width: 95%;
+  }
+  .discussing-btn {
+    height: 45px;
+    font-size: 14px;
+  }
+  .tab-link {
+    margin-bottom: 20px;
+  }
+  .total-review {
+    padding: 0 0 10px;
+    margin: 0 0 10px;
+  }
+  .review-title {
+    font-size: 14px;
+  }
+  .review-date,
+  .review-title-row .badge {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: normal;
+  }
+  .review-content p,
+  .review-content span,
+  .review-content {
+    font-size: 14px !important;
+    line-height: 26px !important;
+  }
+  .review-footer-right a {
+    margin-right: 10px;
+  }
+  .review-footer-right a img {
+    height: 15px;
+  }
+  .star-title {
+    font-size: 24px;
+  }
+  .star-col-image {
+    width: 30px;
+    height: 30px;
+  }
+  .star-col {
+    margin-bottom: 25px;
+    padding-left: 40px;
+  }
+  .star-col p {
+    font-size: 14px;
+  }
+  .top-courses-list li {
+    font-size: 14px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .progress-bar div span {
+    font-size: 16px;
+    bottom: -35px;
+  }
+  .star-box {
+    margin-bottom: 70px;
+  }
 
+  .score-btn {
+    font-size: 14px;
+    line-height: normal;
+    padding: 15px 20px;
+  }
+  .helpful-title {
+    font-size: 18px;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+  .helpful-center h3 {
+    font-size: 16px;
+    line-height: normal;
+    margin-bottom: 5px;
+  }
+  .helpful-center p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .helpful-right {
+    font-size: 16px;
+    line-height: normal;
+  }
+  .reply-footer-btn {
+    font-size: 16px;
+    line-height: normal;
+    padding: 13px 30px;
+  }
+  .filter-title {
+    padding: 20px 20px 0;
+    font-size: 18px;
+  }
+  .filter-col {
+    padding: 20px 20px;
+  }
+  .filter-col-title {
+    font-size: 15px;
+    line-height: normal;
+    margin: 0 0 10px;
+  }
+  .select-box {
+    height: 45px;
+  }
+  .select-box select,
+  .filter-toggle-box .btn,
+  .filter-list-box ul li input + label {
+    font-size: 14px;
+  }
+  .filter-list-box ul li input + label::after {
+    width: 18px;
+    height: 18px;
+  }
+  .filter-list-box ul li input + label {
+    line-height: 18px;
+    padding-left: 25px;
+  }
+  .apply-btn {
+    height: 55px;
+    font-size: 16px;
+  }
 
-@media only screen and (max-width:991px)
-{
-
-.header{ flex-wrap: wrap; }
-.header-search{ order: 3; width: 100%; }
-.container{ width: 100%; }
-.course-left{ display: none; }
-.course-right{ width: 100%; } 
-.course-row{ padding: 30px 15px; }
-.course-section-title h2, .section-title{margin: 0 0 15px; font-size: 24px; line-height: normal; }
-.course-section-title p{ font-size: 14px; line-height: 20px }
-.see-row a{ font-size: 16px; }
-.popular-col h3{font-size: 16px; }
-.course-section-title { margin-bottom: 20px; }
-.video-content p{ font-size: 15px; }
-.tab-menu ul li a{ font-size: 16px; padding: 15px 15px; }
-.breadcrumb ul li{  font-size: 14px; line-height: normal; }
-.review-right { padding-top: 70px; padding-right: 15px; width: 255px; }
-.review-center { width: calc(100% - 255px); }
-.tab-link ul li a, .star-col h4, .score-box h3, .reply-box-title{ line-height: normal; font-size: 16px; }
-.total-review, .review-read a, .review-footer-left, .review-footer-left a, .review-footer-right a, .reply-footer-left{ font-size: 14px; line-height: normal; }
-.review-btn{ height: 45px; font-size: 14px; line-height: 45px; }
-.community-side-col h3{  line-height: normal; font-size: 16px; }
-.community-side-col p{ font-size: 14px; line-height: normal; }
-.review-inner-center{ width: 95%; }
-.discussing-btn{ height: 45px; font-size: 14px; }
-.tab-link { margin-bottom: 20px;}
-.total-review{ padding: 0 0 10px;  margin: 0 0 10px; }
-.review-title{ font-size: 14px; }
-.review-date, .review-title-row .badge{  padding: 5px 10px; font-size: 12px;  line-height: normal;}
-.review-content p, .review-content span, .review-content{ font-size: 14px !important; line-height: 26px !important; }
-.review-footer-right a{ margin-right: 10px; }
-.review-footer-right a img{ height: 15px; }
-.star-title{ font-size: 24px; }
-.star-col-image{ width: 30px; height: 30px; }
-.star-col{ margin-bottom: 25px; padding-left: 40px; }
-.star-col p{ font-size: 14px; }
-.top-courses-list li{ font-size: 14px; width: 100px; height: 30px; line-height: 30px; }
-.progress-bar div span{ font-size: 16px; bottom: -35px; }
-.star-box { margin-bottom: 70px;    }
-
-.score-btn{ font-size: 14px; line-height: normal; padding: 15px 20px; }
-.helpful-title{ font-size: 18px; line-height: normal; margin-bottom: 20px; }
-.helpful-center h3{ font-size: 16px; line-height: normal; margin-bottom: 5px; }
-.helpful-center p{ font-size: 14px; line-height: 20px; }
-.helpful-right{ font-size: 16px; line-height: normal; }
-.reply-footer-btn{ font-size: 16px; line-height: normal; padding: 13px 30px; }
-.filter-title{ padding: 20px 20px 0; font-size: 18px; }
-.filter-col{  padding: 20px 20px; }
-.filter-col-title{ font-size: 15px; line-height: normal; margin: 0 0 10px;  }
-.select-box{ height: 45px; }
-.select-box select, .filter-toggle-box .btn, .filter-list-box ul li input + label{ font-size: 14px; }
-.filter-list-box ul li input + label::after{ width: 18px; height: 18px; }
-.filter-list-box ul li input + label{ line-height: 18px; padding-left: 25px; }
-.apply-btn{ height: 55px; font-size: 16px; }
-
-.bottom-left, .bottom-right a{ font-size: 14px; }
-.rate-row{ display: block !important;  }
-.counselling-banner-image, .counselling-banner-content::after{ display: none; }
-.counselling-banner-content{padding: 20px;  width: 100%;}
-.counselling-banner-content .rating-number{ left: 20px; }
-.course-box .container{ width:100%; }
-
-                
+  .bottom-left,
+  .bottom-right a {
+    font-size: 14px;
+  }
+  .rate-row {
+    display: block !important;
+  }
+  .counselling-banner-image,
+  .counselling-banner-content::after {
+    display: none;
+  }
+  .counselling-banner-content {
+    padding: 20px;
+    width: 100%;
+  }
+  .counselling-banner-content .rating-number {
+    left: 20px;
+  }
+  .course-box .container {
+    width: 100%;
+  }
 }
 
-@media only screen and (max-width:767px)
-{
+@media only screen and (max-width: 767px) {
+  .logo img {
+    width: 150px;
+  }
+  .sign-btn {
+    margin-right: 5px;
+  }
+  .sign-btn,
+  .login-btn {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
 
-  .logo img{ width: 150px; }
-  .sign-btn { margin-right: 5px;  }
-  .sign-btn, .login-btn { padding: 10px 8px; font-size: 14px; }
+  .review-dropdown .btn {
+    height: 45px;
+    width: 80px;
+    font-size: 14px;
+    line-height: 23px;
+  }
+  .search-box {
+    width: calc(100% - 80px);
+    padding: 0 10px 0 10px;
+  }
+  .search-input {
+    height: 45px !important;
+    font-size: 13px;
+  }
+  .banner {
+    height: 285px;
+  }
+  .banner h1 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+  .banner p {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .banner-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .section-title {
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 15px;
+  }
+  .course-box {
+    padding: 30px 0;
+  }
 
-  .review-dropdown .btn{height: 45px; width: 80px; font-size: 14px; line-height: 23px;}
-  .search-box{ width: calc(100% - 80px);  padding: 0 10px 0 10px;}
-  .search-input{ height: 45px !important; font-size: 13px; }
-  .banner{ height: 285px; }
-  .banner h1{  font-size: 26px; line-height: 32px;}
-  .banner p{ font-size: 14px; line-height: 16px; }
-  .banner-btn{ font-size: 14px; padding: 10px 20px; }
-  .section-title{ font-size: 24px; line-height: 28px; margin-bottom: 15px; }
-  .course-box { padding: 30px 0; }
+  .course-col p {
+    font-size: 16px;
+    line-height: normal;
+    margin: 15px 0 0;
+  }
+  .course-col-image {
+    width: 32px;
+    margin: 0 auto;
+    height: 38px;
+  }
+  .course-col-image img {
+    vertical-align: top;
+  }
+  .course-col {
+    width: auto;
+    height: auto;
+  }
 
-  .course-col p{ font-size: 16px; line-height: normal;margin: 15px 0 0; }
-  .course-col-image{ width: 32px; margin: 0 auto;height: 38px; }
-  .course-col-image img{ vertical-align: top; }
-  .course-col{ width: auto; height: auto; }
+  .popular-col h3 {
+    font-size: 14px;
+  }
 
-  .popular-col h3{font-size: 14px; }
+  .footer {
+    padding: 15px 30px 30px;
+  }
+  .footer-logo {
+    width: 210px;
+    margin: 0 0 20px;
+  }
+  .footer-menu .container {
+    display: block !important;
+  }
+  .footer-menu-col {
+    margin: 0 0 15px;
+  }
 
-  .footer{ padding: 15px 30px 30px; }    
-  .footer-logo{ width: 210px; margin: 0 0 20px; }        
-  .footer-menu .container{ display: block !important; }    
-  .footer-menu-col{ margin: 0 0 15px; }   
+  .user-photo {
+    width: 35px;
+    height: 35px;
+  }
+  .user-info-box {
+    padding-right: 45px;
+  }
+  .user-info-box h3 {
+    font-size: 12px;
+    line-height: normal;
+    margin: 0 0 0px;
+  }
+  .user-info-box a {
+    font-size: 10px;
+    line-height: normal;
+    text-decoration: none;
+  }
 
-  .user-photo{ width: 35px;height: 35px; }
-  .user-info-box{padding-right: 45px; }
-  .user-info-box h3{ font-size: 12px; line-height: normal; margin: 0 0 0px; }
-  .user-info-box a{ font-size: 10px;line-height: normal;text-decoration: none; }
-
-  .tab-menu{  }
-  .tab-menu ul{ flex-wrap: wrap; }
-  .tab-menu ul li a {font-size: 14px; padding: 10px 15px; line-height: normal; text-align: center; }
-  .review-title{ margin: 0 0 10px; }
-  .review-main-box, .helpful-inner-box, .reply-footer, .review-field-row, .across-col-box, .room-list-box, .review-title-row, .calendar-main-box{ display: block !important; }
-  .review-center{ width: 100%; padding: 30px 15px 0; }
-/*  .review-footer-left{ margin-bottom: 15px; }*/
-  .review-row .review-row { margin-left: 10px;}
-  .review-right{ padding: 30px 15px; width: 100%; }
-  .helpful-box{ padding: 30px 0; }
-  .helpful-left, .helpful-right{ width: 100%; min-height: 80px; }
-  .helpful-left{ border-radius: 15px 15px 0 0;}
-  .helpful-right{ border-radius:0 0 15px 15px; }
-  .helpful-center{ padding: 20px 15px; }
-  .reply-footer-right{ margin-top: 20px; }
-  .filter-btn.open {left: 225px; }
-  .review-left{left: -235px;width: 235px; }
-  .filter-btn-col{ position: absolute; width: 100%; }
-  .add-brand-icon{ font-size: 15px; }
-  .brand-review-table table td{ padding: 10px 15px; font-size: 14px; }
-  .rating-number{ font-size: 14px; }
-  .rating-number img{ width: 15px; }
-  .counselling-col{ width: 100%; margin: 0 0 20px; }
+  .tab-menu {
+  }
+  .tab-menu ul {
+    flex-wrap: wrap;
+  }
+  .tab-menu ul li a {
+    font-size: 14px;
+    padding: 10px 15px;
+    line-height: normal;
+    text-align: center;
+  }
+  .review-title {
+    margin: 0 0 10px;
+  }
+  .review-main-box,
+  .helpful-inner-box,
+  .reply-footer,
+  .review-field-row,
+  .across-col-box,
+  .room-list-box,
+  .review-title-row,
+  .calendar-main-box {
+    display: block !important;
+  }
+  .review-center {
+    width: 100%;
+    padding: 30px 15px 0;
+  }
+  /*  .review-footer-left{ margin-bottom: 15px; }*/
+  .review-row .review-row {
+    margin-left: 10px;
+  }
+  .review-right {
+    padding: 30px 15px;
+    width: 100%;
+  }
+  .helpful-box {
+    padding: 30px 0;
+  }
+  .helpful-left,
+  .helpful-right {
+    width: 100%;
+    min-height: 80px;
+  }
+  .helpful-left {
+    border-radius: 15px 15px 0 0;
+  }
+  .helpful-right {
+    border-radius: 0 0 15px 15px;
+  }
+  .helpful-center {
+    padding: 20px 15px;
+  }
+  .reply-footer-right {
+    margin-top: 20px;
+  }
+  .filter-btn.open {
+    left: 225px;
+  }
+  .review-left {
+    left: -235px;
+    width: 235px;
+  }
+  .filter-btn-col {
+    position: absolute;
+    width: 100%;
+  }
+  .add-brand-icon {
+    font-size: 15px;
+  }
+  .brand-review-table table td {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  .rating-number {
+    font-size: 14px;
+  }
+  .rating-number img {
+    width: 15px;
+  }
+  .counselling-col {
+    width: 100%;
+    margin: 0 0 20px;
+  }
   /*.col-4, .col-6{ width: 100%; } */
-  .review-col{ margin: 0 0 20px; }
-  .review-input{ height: 45px; font-size: 14px; }
-  .input-title{ font-size: 14px; margin: 0 0 5px; }
-  .inner-banner-box{ height: auto; }
-  .board-list li input + label, .checkbox-col{ font-size: 14px; }
-  .review-modal-box .modal-header{ padding: 15px 10px; }
-  .review-modal-box .modal-title{ font-size: 16px; line-height: normal; }
-  .review-modal-box .modal-body{ padding:30px 15px 50px; max-height: 60vh; overflow: auto;  }
-  .close-btn{  font-size: 14px; line-height: normal; }
-  .review-modal-box .modal-footer { padding: 20px 10px; }
-  .modal-btn{ padding: 10px 20px; width: auto; height: auto; font-weight: 700; font-size: 16px; }
-  .rateModal-box .modal-body { padding: 20px 30px; }
-  .rateModal-title{ font-size: 22px; }
-  .rateModal-box .modal-dialog{ width: calc(100% - 1rem); }
-  .rate-title{ font-size: 14px; margin: 0 0 5px; }
-  .rate-row { margin-bottom: 20px; }
-  .rateModal-box .modal-dialog{ max-height:95vh; overflow: auto; }
-  .editor-box { margin: 0 0 20px; }
-  .rate-checkbox { margin-bottom: 15px; }
-  .rate-submit-btn{ height: 45px; font-size: 16px; }
-  .editor-title{ font-size: 13px; }
-  .across-left, .across-right{ width: 100%; }
-  .across-left{ margin-bottom: 20px; }
-  .discussion-room-list .room-list{ width: 100%; margin-bottom: 10px; }
-  .chat-left{ width: 265px; left: -265px; padding: 20px 15px; }
-  .chat-left.open{ left: 0; }
-  .chat-left .filter-btn-col { width: calc( 100% - 30px ); left: 15px; }
-  .review-title-dropdown{ max-width: 235px; min-width: 235px; padding: 15px; }
-  .review-title-dropdown .review-title p{ font-size: 12px; margin: 0; line-height: normal; }
-  .review-title-dropdown .review-title{padding-bottom: 10px;}
-  .review-info-left, .review-info-right a {font-size: 13px; margin: 0; line-height: normal;  }
-  .follow-btn{  font-size: 14px; line-height: 16px; }
-  .review-title span img{ width: 14px; }
-  .review-dropdown .dropdown-menu li a{ padding: 13px 15px 13px 12px; font-size: 15px;  }
-  .review-dropdown .dropdown-menu{ width: 190px; }
+  .review-col {
+    margin: 0 0 20px;
+  }
+  .review-input {
+    height: 45px;
+    font-size: 14px;
+  }
+  .input-title {
+    font-size: 14px;
+    margin: 0 0 5px;
+  }
+  .inner-banner-box {
+    height: auto;
+  }
+  .board-list li input + label,
+  .checkbox-col {
+    font-size: 14px;
+  }
+  .review-modal-box .modal-header {
+    padding: 15px 10px;
+  }
+  .review-modal-box .modal-title {
+    font-size: 16px;
+    line-height: normal;
+  }
+  .review-modal-box .modal-body {
+    padding: 30px 15px 50px;
+    max-height: 60vh;
+    overflow: auto;
+  }
+  .close-btn {
+    font-size: 14px;
+    line-height: normal;
+  }
+  .review-modal-box .modal-footer {
+    padding: 20px 10px;
+  }
+  .modal-btn {
+    padding: 10px 20px;
+    width: auto;
+    height: auto;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .rateModal-box .modal-body {
+    padding: 20px 30px;
+  }
+  .rateModal-title {
+    font-size: 22px;
+  }
+  .rateModal-box .modal-dialog {
+    width: calc(100% - 1rem);
+  }
+  .rate-title {
+    font-size: 14px;
+    margin: 0 0 5px;
+  }
+  .rate-row {
+    margin-bottom: 20px;
+  }
+  .rateModal-box .modal-dialog {
+    max-height: 95vh;
+    overflow: auto;
+  }
+  .editor-box {
+    margin: 0 0 20px;
+  }
+  .rate-checkbox {
+    margin-bottom: 15px;
+  }
+  .rate-submit-btn {
+    height: 45px;
+    font-size: 16px;
+  }
+  .editor-title {
+    font-size: 13px;
+  }
+  .across-left,
+  .across-right {
+    width: 100%;
+  }
+  .across-left {
+    margin-bottom: 20px;
+  }
+  .discussion-room-list .room-list {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .chat-left {
+    width: 265px;
+    left: -265px;
+    padding: 20px 15px;
+  }
+  .chat-left.open {
+    left: 0;
+  }
+  .chat-left .filter-btn-col {
+    width: calc(100% - 30px);
+    left: 15px;
+  }
+  .review-title-dropdown {
+    max-width: 235px;
+    min-width: 235px;
+    padding: 15px;
+  }
+  .review-title-dropdown .review-title p {
+    font-size: 12px;
+    margin: 0;
+    line-height: normal;
+  }
+  .review-title-dropdown .review-title {
+    padding-bottom: 10px;
+  }
+  .review-info-left,
+  .review-info-right a {
+    font-size: 13px;
+    margin: 0;
+    line-height: normal;
+  }
+  .follow-btn {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .review-title span img {
+    width: 14px;
+  }
+  .review-dropdown .dropdown-menu li a {
+    padding: 13px 15px 13px 12px;
+    font-size: 15px;
+  }
+  .review-dropdown .dropdown-menu {
+    width: 190px;
+  }
 
-  .calendar-modal .modal-dialog{ padding: 10px; max-height: 96vh; overflow: auto; }
-  .date-title{ font-size: 16px; padding: 0 20px; }
-  .date-title span { padding: 0 5px; display: block; }
-  .select-time-box { margin: 30px 0 0; }
-  .availability-col a{ font-size: 15px; line-height: normal; }
-  .availability-col a img { margin-right: 5px; width: 25px; }
-  .select-filter li{ font-size: 12px; }
-  .select-filter li a{ margin-left:5px; }
-  .select-filter li a img{width: 10px;}
-  .updates-title{ margin: 15px 0; font-size: 14px; line-height: normal; }
-  .updates-field input{ padding: 15px 10px; font-size: 13px; line-height: normal;  }
-  .updates-field a{ margin: 0 0 0 5px; font-size: 13px; }
-  .confirm-btn{ font-size: 16px; line-height: normal; padding: 14px 10px; }
-  .time-box p{ font-size: 20px; }
-  .time-box h2{ font-size: 50px; }
-  .counselling-banner-content h3{  font-size: 18px; line-height: normal; }
-  .counselling-banner-content p{ font-size: 13px; line-height: normal; }
-  .counselling-banner-content{ min-height: 140px;}
-  .description-editor-box > p{ line-height: normal; font-size: 14px; margin: 0 0 10px; }
-  .counselling-detail-box{ padding: 0 0 30px; }
-  .compare-modal-box .modal-dialog{ padding:20px 20px 30px; max-height: 96vh; overflow: auto;  }
-  .search-title{ font-size: 16px; line-height: normal; margin: 0 0 15px; }
-  .search-result-col{ padding: 8px; font-size: 13px; margin: 0 5px 5px 0; }
-  .search-result-col a img{ width: 10px; }
-  .compare-modal-box .popular-col{ width: 50%; }
-  .compare-info{ font-size: 14px; line-height: normal; }
-  .compare-info-left{ margin-bottom: 10px; }
-  .file-upload-box input + label, .file-upload-left{ display: block; font-size: 14px; line-height: normal; }
-  .file-upload-left{ margin-bottom: 5px; }
-  .notify-title{ font-size: 14px; margin: 20px 0 10px;  }
+  .calendar-modal .modal-dialog {
+    padding: 10px;
+    max-height: 96vh;
+    overflow: auto;
+  }
+  .date-title {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+  .date-title span {
+    padding: 0 5px;
+    display: block;
+  }
+  .select-time-box {
+    margin: 30px 0 0;
+  }
+  .availability-col a {
+    font-size: 15px;
+    line-height: normal;
+  }
+  .availability-col a img {
+    margin-right: 5px;
+    width: 25px;
+  }
+  .select-filter li {
+    font-size: 12px;
+  }
+  .select-filter li a {
+    margin-left: 5px;
+  }
+  .select-filter li a img {
+    width: 10px;
+  }
+  .updates-title {
+    margin: 15px 0;
+    font-size: 14px;
+    line-height: normal;
+  }
+  .updates-field input {
+    padding: 15px 10px;
+    font-size: 13px;
+    line-height: normal;
+  }
+  .updates-field a {
+    margin: 0 0 0 5px;
+    font-size: 13px;
+  }
+  .confirm-btn {
+    font-size: 16px;
+    line-height: normal;
+    padding: 14px 10px;
+  }
+  .time-box p {
+    font-size: 20px;
+  }
+  .time-box h2 {
+    font-size: 50px;
+  }
+  .counselling-banner-content h3 {
+    font-size: 18px;
+    line-height: normal;
+  }
+  .counselling-banner-content p {
+    font-size: 13px;
+    line-height: normal;
+  }
+  .counselling-banner-content {
+    min-height: 140px;
+  }
+  .description-editor-box > p {
+    line-height: normal;
+    font-size: 14px;
+    margin: 0 0 10px;
+  }
+  .counselling-detail-box {
+    padding: 0 0 30px;
+  }
+  .compare-modal-box .modal-dialog {
+    padding: 20px 20px 30px;
+    max-height: 96vh;
+    overflow: auto;
+  }
+  .search-title {
+    font-size: 16px;
+    line-height: normal;
+    margin: 0 0 15px;
+  }
+  .search-result-col {
+    padding: 8px;
+    font-size: 13px;
+    margin: 0 5px 5px 0;
+  }
+  .search-result-col a img {
+    width: 10px;
+  }
+  .compare-modal-box .popular-col {
+    width: 50%;
+  }
+  .compare-info {
+    font-size: 14px;
+    line-height: normal;
+  }
+  .compare-info-left {
+    margin-bottom: 10px;
+  }
+  .file-upload-box input + label,
+  .file-upload-left {
+    display: block;
+    font-size: 14px;
+    line-height: normal;
+  }
+  .file-upload-left {
+    margin-bottom: 5px;
+  }
+  .notify-title {
+    font-size: 14px;
+    margin: 20px 0 10px;
+  }
 
-  .share-button:hover .sharethis-inline-share-buttons{top: 23px}
+  .share-button:hover .sharethis-inline-share-buttons {
+    top: 23px;
+  }
 
-  .tab-link ul{margin: 0 0 10px}
+  .tab-link ul {
+    margin: 0 0 10px;
+  }
 }
 
-@media only screen and (max-width:480px){
-
-  .popular-col{ width: 50%; }
+@media only screen and (max-width: 480px) {
+  .popular-col {
+    width: 50%;
+  }
   /* .popular-col:nth-child(2n){ border-right: none; } */
-  .review-user-image{position: sticky;margin-bottom: 10px;}
-  .review-row{padding-left:15px;}
+  .review-user-image {
+    position: sticky;
+    margin-bottom: 10px;
+  }
+  .review-row {
+    padding-left: 15px;
+  }
 }
