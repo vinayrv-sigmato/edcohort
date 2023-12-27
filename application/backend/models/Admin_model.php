@@ -281,5 +281,15 @@ class admin_model extends CI_Model
             return $query->result();
         }
     }
+    function get_all_brand()
+    {
+        $this->db->select('brand_id ,brand_name');
+        $this->db->from('tbl_brand c');
+        $query=$this->db->get();
+        if($query)
+        {
+            return $query->result();
+        }
+    }
 }
 ?>

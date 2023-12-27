@@ -21,14 +21,19 @@
                                         <h3 class="card-title">Add Compare</h3>
                                     </div>
                                     <div class="card-body mb-0">
-                                        <form class="form-horizontal" action="<?php echo base_url(); ?>admin_compare/add_compare_submit" method="post" enctype="multipart/form-data">
-                                            
+                                        
+                                        <form class="form-horizontal" action="<?php echo base_url(); ?>admin_compare/edit_compare_submit" method="post" enctype="multipart/form-data">
+                                        <?php
+                                        if($compare_detail)
+                                        {
+                                         foreach ($compare_detail as $compare){  
+                                            ?>
                                             <?php 
                                                         $resp_get_seg_list = '';
-                                                         $resp_get_seg_list = getSegmentList();
-                                                      //  print_R($resp_get_seg_list);
-                                                    // exit;
+                                                        $resp_get_seg_list = getSegmentList();
                                                     ?>   
+
+                                                <input type="hidden" value="<?php echo $compare->id; ?>" name="id" id="id">
                                              <div class="form-group ">                                                
                                                 <div class="row">
                                                     <div class="col-md-3">
@@ -39,7 +44,7 @@
                                                             <option value="0">Select</option>
                                                               <?php if($resp_get_seg_list){ ?>
                                                             <?php foreach ($resp_get_seg_list as $r) { ?>
-                                                            <option value="<?php echo $r->id; ?>"><?php echo $r->segment_name ;?></option>
+                                                            <option value="<?php echo $r->id; ?>" <?php if($r->id == $compare->segment_id){ echo 'selected="selected"';} ?>><?php echo $r->segment_name ;?></option>
                                                             <?php } } ?>
                                                         </select>  
                                                     </div>
@@ -49,7 +54,8 @@
 
                                             <?php 
                                                         $resp_get_brand_list = '';
-                                                        $get_all_brand = get_all_brand();   
+                                                        $get_all_brand = get_all_brand();
+                                                        
                                                     ?>   
                                              <div class="form-group ">                                                
                                                 <div class="row">
@@ -61,7 +67,7 @@
                                                             <option value="0">Select</option>
                                                               <?php if($get_all_brand){ ?>
                                                             <?php foreach ($get_all_brand as $r) { ?>
-                                                            <option value="<?php echo $r->brand_id  ; ?>"><?php echo $r->brand_name;?></option>
+                                                            <option value="<?php echo $r->brand_id;?>" <?php if($r->brand_id == $compare->brand_id){ echo 'selected="selected"';} ?>><?php echo $r->brand_name;?></option>
                                                             <?php } } ?>
                                                         </select>  
                                                     </div>
@@ -82,7 +88,7 @@
                                                             <option value="0">Select</option>
                                                               <?php if($resp_num_list){ ?>
                                                             <?php foreach ($resp_num_list as $r) { ?>
-                                                            <option value="<?php echo $r->id; ?>"><?php echo $r->value ;?></option>
+                                                            <option value="<?php echo $r->id; ?>" <?php if($r->id == $compare->aging){ echo 'selected="selected"';} ?>><?php echo $r->value ;?></option>
                                                             <?php } } ?>
                                                         </select>  
                                                     </div>
@@ -99,7 +105,7 @@
                                                             <option value="0">Select</option>
                                                               <?php if($resp_num_list){ ?>
                                                             <?php foreach ($resp_num_list as $r) { ?>
-                                                            <option value="<?php echo $r->id; ?>"><?php echo $r->value ;?></option>
+                                                            <option value="<?php echo $r->id; ?>" <?php if($r->id == $compare->overall_brand){ echo 'selected="selected"';} ?> ><?php echo $r->value ;?></option>
                                                             <?php } } ?>
                                                         </select>  
                                                     </div>
@@ -119,7 +125,7 @@
                                                             <option value="0">Select</option>
                                                               <?php if($resp_grade_list){ ?>
                                                             <?php foreach ($resp_grade_list as $r) { ?>
-                                                            <option value="<?php echo $r->id; ?>"><?php echo $r->value ;?></option>
+                                                            <option value="<?php echo $r->id; ?>" <?php if($r->id == $compare->faculty_quality){ echo 'selected="selected"';} ?> ><?php echo $r->value ;?></option>
                                                             <?php } } ?>
                                                         </select>  
                                                     </div>
@@ -135,7 +141,7 @@
                                                             <option value="0">Select</option>
                                                               <?php if($resp_num_list){ ?>
                                                             <?php foreach ($resp_num_list as $r) { ?>
-                                                            <option value="<?php echo $r->id; ?>"><?php echo $r->value ;?></option>
+                                                            <option value="<?php echo $r->id; ?>" <?php if($r->id == $compare->course_quality){ echo 'selected="selected"';} ?>><?php echo $r->value ;?></option>
                                                             <?php } } ?>
                                                         </select>  
                                                     </div>
@@ -152,7 +158,7 @@
                                                             <option value="0">Select</option>
                                                               <?php if($resp_grade_list){ ?>
                                                             <?php foreach ($resp_grade_list as $r) { ?>
-                                                            <option value="<?php echo $r->id; ?>"><?php echo $r->value ;?></option>
+                                                            <option value="<?php echo $r->id; ?>" <?php if($r->id == $compare->acadmic_quality){ echo 'selected="selected"';} ?>><?php echo $r->value ;?></option>
                                                             <?php } } ?>
                                                         </select>  
                                                     </div>
@@ -169,7 +175,7 @@
                                                             <option value="0">Select</option>
                                                               <?php if($resp_num_list){ ?>
                                                             <?php foreach ($resp_num_list as $r) { ?>
-                                                            <option value="<?php echo $r->id; ?>"><?php echo $r->value ;?></option>
+                                                            <option value="<?php echo $r->id; ?>" <?php if($r->id == $compare->referal_score){ echo 'selected="selected"';} ?>><?php echo $r->value ;?></option>
                                                             <?php } } ?>
                                                         </select>  
                                                     </div>
@@ -182,7 +188,7 @@
                                                         <label class="form-label" id="examplenameInputname2">Complaint Score <span style="color:red">*</span></label>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <input type="text" class="form-control" id="complaint_score" name="complaint_score" placeholder="Enter Complaint Score" required onkeyup="category_slug_name(this.value)" required>
+                                                        <input type="text" class="form-control" id="complaint_score" value ="<?php echo $compare->complaint_score; ?>"name="complaint_score" placeholder="Enter Complaint Score" required onkeyup="category_slug_name(this.value)" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -197,7 +203,7 @@
                                                             <option value="0">Select</option>
                                                               <?php if($resp_grade_list){ ?>
                                                             <?php foreach ($resp_grade_list as $r) { ?>
-                                                            <option value="<?php echo $r->id; ?>"><?php echo $r->value ;?></option>
+                                                            <option value="<?php echo $r->id; ?>" <?php if($r->id == $compare->market_reputation){ echo 'selected="selected"';} ?>><?php echo $r->value ;?></option>
                                                             <?php } } ?>
                                                         </select>  
                                                     </div>
@@ -214,7 +220,7 @@
                                                             <option value="0">Select</option>
                                                               <?php if($resp_grade_list){ ?>
                                                             <?php foreach ($resp_grade_list as $r) { ?>
-                                                            <option value="<?php echo $r->id; ?>"><?php echo $r->value ;?></option>
+                                                            <option value="<?php echo $r->id; ?>" <?php if($r->id == $compare->edcohort_rating){ echo 'selected="selected"';} ?>><?php echo $r->value ;?></option>
                                                             <?php } } ?>
                                                         </select>  
                                                     </div>
@@ -231,7 +237,7 @@
                                                             <option value="0">Select</option>
                                                               <?php if($resp_num_list){ ?>
                                                             <?php foreach ($resp_num_list as $r) { ?>
-                                                            <option value="<?php echo $r->id; ?>"><?php echo $r->value ;?></option>
+                                                            <option value="<?php echo $r->id; ?>" <?php if($r->id == $compare->student_rating){ echo 'selected="selected"';} ?>><?php echo $r->value ;?></option>
                                                             <?php } } ?>
                                                         </select>  
                                                     </div>
@@ -245,8 +251,8 @@
                                                     </div>
                                                     <div class="col-md-9">
                                                         <select class="form-control" name="status" id="status" required>
-                                                          <option value="1" >Active</option>
-                                                          <option value="0" >Inactive</option>
+                                                        <option value="active" <?php if ($compare->status==1) { echo 'selected'; } ?> >Active</option>
+                                                            <option value="inactive" <?php if ($compare->status==2) { echo 'selected'; } ?>>Inactive</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -259,6 +265,7 @@
                                                 </div>
                                             </div>
                                         </form>
+                                        <?php } } ?>
                                     </div>
                                 </div>
                             </div>

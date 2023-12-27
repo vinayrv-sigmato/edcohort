@@ -105,6 +105,14 @@
         return $c3.$c2.$c1;        
     }
 
+    function get_all_brand()
+    {
+        $data = '';
+        $CI =& get_instance();
+        $data=$CI->admin_model->get_all_brand();
+        return $data;
+    }
+
     function getClassList($class_id)
     {
         $CI =& get_instance();
@@ -184,15 +192,21 @@
         $CI =& get_instance();
        // print_R("hiii"); 
         $data=$CI->admin_model->get_segment_list();
-        return $data;
-        //foreach ($data as $category)
-       /* {   
-            $c1=$c2=$c3="";
-            $c1=$category->batch_name;             
-        }*/
-        //return $c3.$c2.$c1;        
+        return $data;        
     }
-    
+    function get_segemnt($id)
+    {
+        $CI =& get_instance();
+        $c1=$c2=$c3="";
+        
+        $data=$CI->admin_model->selectOne('tbl_segment','id',$id);
+        foreach ($data as $category)
+        {   
+            $c1=$c2=$c3="";
+            $c1=$category->segment_name;             
+        }
+        return $c3.$c2.$c1;   
+    }
     
 
 
