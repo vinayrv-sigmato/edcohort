@@ -425,6 +425,7 @@ $segment = $this->input->get('segment');
                 <input type="hidden" class="form-control" name="customer_rating" id="customer_rating" placeholder="Your Name" value="<?php echo $customer_rating; ?>">
                 <input type="hidden" class="form-control" name="date_posted" id="date_posted" placeholder="Your Name" value="<?php echo $date_posted; ?>">
                 <input type="hidden" class="form-control" name="sort_by" id="sort_by" placeholder="Your Name" value="<?php echo $sort_by; ?>">
+                <input type="hidden" class="form-control" name="segment" id="segment" placeholder="Your Name" value="<?php echo $segment; ?>">
 
                 <!-- <div class="brand-search-box">
                 <div class="search-result-col" id="search-1" style="display: none;"><a href="#"><img src="<?php echo base_url(); ?>assets/images/close3.png" alt=""></a></div>

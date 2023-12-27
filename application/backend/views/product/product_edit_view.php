@@ -43,7 +43,6 @@
                                             <?php 
                                                         $resp_get_seg_list = '';
                                                          $resp_get_seg_list = getSegmentList();
-                                                        // print_R($resp_get_seg_list);
                                                     ?>   
                                              <div class="form-group ">                                                
                                                 <div class="row">
@@ -55,7 +54,7 @@
                                                             <option value="0">Select</option>
                                                               <?php if($resp_get_seg_list){ ?>
                                                             <?php foreach ($resp_get_seg_list as $r) { ?>
-                                                            <option value="<?php echo $r->id; ?>"><?php echo $r->segment_name ;?></option>
+                                                            <option value="<?php echo $r->id; ?>" <?php if($r->id == $row->segment_id){ echo 'selected="selected"';} ?> ><?php echo $r->segment_name ;?></option>
                                                             <?php } } ?>
                                                         </select>  
                                                     </div>
@@ -71,7 +70,7 @@
                                                 {
                                                     $edit_cat_id = $product_category[0]->category_id;
                                                 }
-                                            print_R($edit_cat_id);
+                                            //print_R($edit_cat_id);
                                                
                                             ?>
                                              <div class="form-group ">                                                
@@ -84,7 +83,7 @@
                                                             <option value="0">Select</option>
                                                               <?php if($resp_get_cat_list){ ?>
                                                             <?php foreach ($resp_get_cat_list as $r) { ?>
-                                                            <option value="<?php echo $r->category_id; ?> <?php if($r->category_id == $edit_cat_id){ echo 'selected="selected"';} ?> "><?php echo $r->category_name ;?></option>
+                                                            <option value="<?php echo $r->category_id; ?>" <?php if($r->category_id == $edit_cat_id){ echo 'selected="selected"';} ?>><?php echo $r->category_name ;?></option>
                                                             <?php } } ?>
                                                         </select>  
                                                     </div>
