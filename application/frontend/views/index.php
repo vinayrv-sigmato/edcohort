@@ -72,6 +72,16 @@ $sort_by = $this->input->get('sort_by');
 
         /* Adjust as needed */
     }
+
+    .how-section1 .subheading {
+        font-size: 18px;
+    }
+
+
+
+    .img-sub-heading {
+        font-size: 16px;
+    }
 }
 </style>
 
@@ -165,7 +175,7 @@ $sort_by = $this->input->get('sort_by');
             $class_records_count = count($segment_record);
             if ($class_records_count > 0) {
                 foreach ($segment_record as $class) { ?>
-            <div class="col-md-3 col-sm-6 mb-4">
+            <div class="col-md-4 col-sm-6 mb-4">
                 <div class="card text-center">
                     <div class="card-img-top card-img-size img-size mt-5">
                         <?php echo $class->segment_img; ?>
@@ -458,41 +468,37 @@ if (empty($courseid)) {
                         Read about all brands and their offerings here.</p>
                 </div>
 
-                <div class="popular-row">
-                    <?php
-                            foreach ($resp_get_brand as $brand) {
-                               
-                            ?>
-                    <!--col-->
-                    <div class="popular-col">
-                        <a href="#">
-                            <div class="popular-col-image">
-                                <img src="<?php echo base_url(); ?>uploads/brand/<?php echo $brand->brand_image; ?>"
-                                    width="50" alt="<?php echo $brand->brand_name; ?>">
-                            </div>
-                            <h3>
-                                <?php echo $brand->brand_name; ?>
-                            </h3>
-                            <div class="popular-col-rating">
-                                <div class="popular-star-rating">
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                <div class="container p-0">
+                    <div class="row">
+                        <?php foreach ($resp_get_brand as $brand) { ?>
+                        <div class="col-md-3 mb-3">
+                            <div class="card " style="height:300px">
+                                <div style="display:flex; justify-content:center; align-items:center;">
+                                    <img src=" <?php echo base_url(); ?>uploads/brand/<?php echo $brand->brand_image; ?>"
+                                        class="card-img-top m-2" alt="<?php echo $brand->brand_name; ?>"
+                                        style="width: 150px; height: 150px;">
                                 </div>
-                                <span class="rating-number">
-                                    <img src="<?php echo base_url(); ?>/assets/images/Star.png" alt="">3.2</span>
+                                <div class="card-body text-center m-3">
+                                    <h5 class="card-title"><?php echo $brand->brand_name; ?></h5>
+                                    <div class="popular-star-rating">
+                                        <i class="fa fa-star text-yellow"></i>
+                                        <i class="fa fa-star text-yellow"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p class="card-text rating-number">
+                                        <img src="<?php echo base_url(); ?>/assets/images/Star.png" alt="">3.2
+                                    </p>
+                                </div>
                             </div>
-                        </a>
+                        </div>
+                        <?php } ?>
                     </div>
-                    <?php }
-                            ?>
-
                 </div>
-
-                <div class="see-rows"><a href="<?php echo base_url(); ?>brands">See all <img
-                            src="<?php echo base_url(); ?>assets/images/see-arrow.png" alt="" /></a></div>
+                <div style="display:flex; justify-content:center; align-item:center;"><a
+                        href=" <?php echo base_url(); ?>brands">See all
+                        <img src="<?php echo base_url(); ?>assets/images/see-arrow.png" alt="" /></a></div>
                 <?php }
                     ?>
             </div>
@@ -516,68 +522,74 @@ if (empty($courseid)) {
                         Read about all brands and their offerings here.</p>
                 </div>
 
-                <div class="popular-row">
+                <div class="container p-0">
+                    <div class="row">
+                        <?php foreach ($resp_get_course as $course)  { ?>
+                        <div class="col-md-3 mb-3">
+                            <div class="card " style="max-height:320px">
+                                <a href="<?php echo base_url(); ?>review?course=<?php echo $course->product_id; ?>&segment=<?php echo $class->id; ?>"
+                                    style="text-decoration:none; color:#fff">
 
-                    <?php foreach ($resp_get_course as $course) { ?>
-                    <!--col-->
-                    <div class="popular-col">
-                        <a
-                            href="<?php echo base_url(); ?>review?course=<?php echo $course->product_id; ?>&segment=<?php echo $class->id; ?>">
-                            <div class="popular-col-image">
-                                <img src="<?php echo base_url(); ?>uploads/product/image/<?php echo $course->product_image; ?>"
-                                    alt="<?php echo $course->product_name; ?>" width="50">
+                                    <div style=" display:flex;justify-content:center; align-items:center;">
+
+                                        <img class="m-2"
+                                            src="<?php echo base_url(); ?>uploads/product/image/<?php echo $course->product_image; ?>"
+                                            alt="<?php echo $course->product_name; ?>"
+                                            style="width: 200px; height:200px; ">
+                                    </div>
+
+                                    <div class="card-body text-center ">
+                                        <h5>
+                                            <?php echo $course->product_name; ?>
+                                        </h5>
+                                        <div class="popular-star-rating m-2">
+                                            <?php if ($course->product_rating == 1) { ?>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <?php } ?>
+                                            <?php if ($course->product_rating == 2) { ?>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <?php } ?>
+                                            <?php if ($course->product_rating == 3) { ?>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <?php } ?>
+                                            <?php if ($course->product_rating == 4) { ?>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star"></i>
+                                            <?php } ?>
+                                            <?php if ($course->product_rating == 5) { ?>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <?php } ?>
+                                        </div>
+                                        <p class="card-text rating-number">
+                                            <img src="<?php echo base_url(); ?>/assets/images/Star.png" alt="">3.2
+                                        </p>
+                                    </div>
+                                </a>
                             </div>
-                            <h3>
-                                <?php echo $course->product_name; ?>
-                            </h3>
-                            <div class="popular-col-rating">
-                                <div class="popular-star-rating">
-                                    <?php if ($course->product_rating == 1) { ?>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <?php } ?>
-                                    <?php if ($course->product_rating == 2) { ?>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <?php } ?>
-                                    <?php if ($course->product_rating == 3) { ?>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <?php } ?>
-                                    <?php if ($course->product_rating == 4) { ?>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star"></i>
-                                    <?php } ?>
-                                    <?php if ($course->product_rating == 5) { ?>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <i class="fa fa-star text-yellow"></i>
-                                    <?php } ?>
-                                </div>
-                                <span class="rating-number">
-                                    <img src="<?php echo base_url(); ?>/assets/images/Star.png"
-                                        alt=""><?php echo $course->product_rating; ?></span>
-                            </div>
-                        </a>
+                        </div>
+                        <?php } ?>
                     </div>
-                    <!--col-->
-                    <?php } ?>
-
                 </div>
+
 
                 <div class="see-row"><a href="<?php echo base_url(); ?>course">See all <img
                             src="<?php echo base_url(); ?>assets/images/see-arrow.png" alt="" /></a></div>
@@ -604,7 +616,7 @@ if (empty($courseid)) {
             </div>
         <?php }
     } */ ?>
-</div> -->
+</div> 
 
         <div class="container pt-5">
             <div class="row">
@@ -630,10 +642,10 @@ if (empty($courseid)) {
                     <div class="row">
                         <?php if ($brand_records) {
                                 foreach ($brand_records as $brand) { ?>
-                        <div class="col-4 col-md-3 pt-3 pb-3 text-center">
+                        <div class="col-3 col-md-3 pt-3 pb-3 text-center">
                             <img src="<?php echo base_url(); ?>uploads/brand/<?php echo $brand->brand_image; ?>"
                                 class="img-fluid" alt="<?php echo $brand->brand_name; ?>"
-                                style="height: 70px; width:auto;">
+                                style="height: 50px; width:auto;">
 
                         </div>
                         <?php }
@@ -654,11 +666,12 @@ if (empty($courseid)) {
         <div class="container">
             <div class="how-section1 ">
                 <div class="row ">
-                    <div class="col-md-6 how-img">
+                    <div class="col-12 col-md-4 how-img"
+                        style="display:flex; justify-content:center; align-items:center">
                         <img src="<?php echo base_url(); ?>assets/images/cst-review.webp"
-                            class="rounded-circle img-fluid" alt="" />
+                            class="rounded-circle img-fluid" alt="" style="width: 400px;" />
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-8 ">
                         <h4>Review</h4>
                         <h4 class="subheading">Thousands of people, everyday, make a career choice their friend
                             has
@@ -676,7 +689,7 @@ if (empty($courseid)) {
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <h4>Complain</h4>
                         <h4 class="subheading">Thousands of people, everyday, make a career choice their friend
                             has
@@ -692,17 +705,17 @@ if (empty($courseid)) {
                             here, find out how it can work for you too!</p>
                         <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
                     </div>
-                    <div class="col-md-6 how-img">
+                    <div class="col-md-4 how-img" style="display:flex; justify-content:center; align-items:center">
                         <img src="<?php echo base_url(); ?>assets/images/cmp-img.jpg" class="rounded-circle img-fluid"
                             alt="" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 how-img">
+                    <div class="col-md-4 how-img" style="display:flex; justify-content:center; align-items:center">
                         <img src="<?php echo base_url(); ?>assets/images/cmpr-img.jpg" class="rounded-circle img-fluid"
                             alt="" />
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <h4>Compare</h4>
                         <h4 class="subheading">With GetLance, you have the freedom and flexibility to control
                             when,
@@ -722,7 +735,7 @@ if (empty($courseid)) {
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <h4>Counselling</h4>
                         <h4 class="subheading">All projects include GetLance Payment Protection � helping ensure
                             that
@@ -741,18 +754,18 @@ if (empty($courseid)) {
                             deposit or PayPal to wire transfer and more.</p>
                         <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
                     </div>
-                    <div class="col-md-6 how-img">
+                    <div class="col-md-4 how-img" style="display:flex; justify-content:center; align-items:center">
                         <img src="<?php echo base_url(); ?>assets/images/cnslng-img.jpg"
                             class="rounded-circle img-fluid" alt="" />
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6 how-img">
+                    <div class="col-md-4 how-img" style="display:flex; justify-content:center; align-items:center">
                         <img src="<?php echo base_url(); ?>assets/images/cohort-study-img.jpeg"
                             class="rounded-circle img-fluid" alt="" />
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <h4>Cohort</h4>
                         <h4 class="subheading">With GetLance, you have the freedom and flexibility to control
                             when,
@@ -792,14 +805,14 @@ if (empty($courseid)) {
                             deposit or PayPal to wire transfer and more.</p>
                         <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
                     </div>
-                    <div class="col-md-6 how-img">
+                    <div class="col-md-6 how-img" style="display:flex; justify-content:center; align-items:center">
                         <img src="<?php echo base_url(); ?>assets/images/coupons-img.jpg"
                             class="rounded-circle img-fluid" alt="" />
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6 how-img">
+                    <div class="col-md-6 how-img" style="display:flex; justify-content:center; align-items:center">
                         <img src="<?php echo base_url(); ?>assets/images/mntring-work.png"
                             class="rounded-circle img-fluid" alt="" />
                     </div>
