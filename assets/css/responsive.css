@@ -813,4 +813,7 @@
   .review-row {
     padding-left: 15px;
   }
+  .see-all a {
+    font-size: 15px;
+  }
 }
