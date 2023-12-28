@@ -232,7 +232,7 @@ if (empty($courseid)) {
                 <path d="M17.8333 3.00033L17.8333 37.667M33 18.167L17.8333 3.00033L2.66667 18.167" stroke="#E8F9FD"
                     stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <h2>Please select your course catagory for curated view</h2>
+            <h2>Please select your course catagory for curated viewsssss</h2>
             <span>You can change this later anytime</span>
         </div>
     </div>
