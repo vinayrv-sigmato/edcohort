@@ -14,7 +14,9 @@ class comparison extends CI_Controller {
   function index($id = '')
   {
     $course = $this->input->get('course');
-
+    $segment = $this->input->get('segment');
+    //print_R($segment);
+    //exit;
     ////Filter data ////////
     $where_category = 'status = 1 and parent_id = 0';
     $data['category_records'] = $this->common_model->selectWhereorderby('tbl_class',$where_category,'title','ASC');
@@ -33,7 +35,7 @@ class comparison extends CI_Controller {
     ////Filter////////
 
     //print_pre($_POST);
-
+    if($segment){
     if(empty($this->input->get('brandID'))){
       $compare_id = $this->input->get('brand');
     }else{
@@ -52,6 +54,8 @@ class comparison extends CI_Controller {
     $where = 'brand_id = '."'".$compare_id['2']."'";
     $data['compare_list3'] = $this->common_model->selectWhere('tbl_brand',$where);
 }
+  }
+
 
     $where = "product_status = 'active'";
 
@@ -130,7 +134,7 @@ class comparison extends CI_Controller {
     $data['selected_brand_list'] = $this->comparison_model->getProductcomparison($wherereview);
 
     $data['review_count'] = $this->number_format_short($n);
-
+    //print_R($data);
     
     //print_ex($data['comparison_list']);      
       $this->load->view('common/header',$data);

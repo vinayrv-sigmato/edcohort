@@ -319,7 +319,7 @@ class Common_model extends CI_Model {
         $where= '';
         $query = '';
         $where.=" c.segment_id = ".$id." and b.brand_id = c.product_brand";
-        $this->db->select('c.product_brand,b.brand_name,b.brand_image');
+        $this->db->select('c.product_brand,b.brand_name,b.brand_image,b.brand_id');
         $this->db->from('tbl_product c, tbl_brand b');
          $this->db->where($where);
         $this->db->group_by('b.brand_id');

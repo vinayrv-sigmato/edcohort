@@ -576,7 +576,10 @@ $segment = $this->input->get('segment');
             </div> -->
                         <div class="popular-row">
                             <!--col-->
-                            <?php foreach ($brand_records as $brand) { ?>
+                            <?php 
+                            $res_brand_list = getseg_brand_list($segment);
+                            ?>
+                            <?php foreach ($res_brand_list as $brand) { ?>
                             <div class="popular-col">
                                 <a href="javascript:void(0)"
                                     onclick="compare_brand('<?php echo $brand->brand_name; ?>','<?php echo $brand->brand_id; ?>')">
@@ -587,7 +590,7 @@ $segment = $this->input->get('segment');
                                             src="<?php echo base_url(); ?>uploads/brand/<?php echo $brand->brand_image; ?>">
                                     </div>
                                     <h3><?php echo $brand->brand_name; ?></h3>
-                                    <div class="popular-col-rating">
+                                    <!--<div class="popular-col-rating">
                                         <div class="popular-star-rating">
                                             <?php if ($brand->overall_ranking == 1) { ?>
                                             <i class="fa fa-star text-yellow"></i><i class="fa fa-star"></i> <i
@@ -620,7 +623,7 @@ $segment = $this->input->get('segment');
                                         <span class="rating-number">
                                             <img src="<?php echo base_url(); ?>assets/images/Star.png" alt="">
                                             <?php echo $brand->overall_ranking; ?></span>
-                                    </div>
+                                    </div> -->
                                 </a>
                             </div>
                             <?php } ?>
@@ -997,12 +1000,13 @@ $segment = $this->input->get('segment');
                     var customer_rating = $('#customer_rating').val();
                     var date_posted = $('#date_posted').val();
                     var sort_by = $('#sort_by').val();
+                    var segment = $('#segment').val();
                     window.location = base_url + 'comparison?brandID=' + brandID + '&course=' + course +
                         '&brand=' +
                         brand + '&product_type=' + product_type + '&board=' + board + '&classid=' +
                         classid +
                         '&batch=' + batch + '&customer_rating=' + customer_rating + '&date_posted=' +
-                        date_posted;
+                        date_posted + '&segment=' + segment ;
                     //    $.ajax({
                     //         url:"<?php echo base_url(); ?>comparison-search",
                     //         method:"POST",
