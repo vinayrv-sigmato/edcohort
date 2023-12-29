@@ -56,6 +56,8 @@ class comparison extends CI_Controller {
 }
   }
 
+  
+
 
     $where = "product_status = 'active'";
 
