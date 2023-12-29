@@ -8,6 +8,7 @@ $batch = $this->input->get('batch');
 $customer_rating = $this->input->get('customer_rating');
 $date_posted = $this->input->get('date_posted');
 $sort_by = $this->input->get('sort_by');
+
 ?>
 <!-- adding owl.carousel.css CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
@@ -232,7 +233,7 @@ if (empty($courseid)) {
                 <path d="M17.8333 3.00033L17.8333 37.667M33 18.167L17.8333 3.00033L2.66667 18.167" stroke="#E8F9FD"
                     stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <h2>Please select your course catagory for curated viewsssss</h2>
+            <h2>Please select your course catagory for curated view</h2>
             <span>You can change this later anytime</span>
         </div>
     </div>
@@ -536,27 +537,63 @@ if (empty($courseid)) {
 
                 <div class="container p-0">
                     <div class="row">
+                       <?print_r($course); ?>
                         <?php foreach ($resp_get_course as $r)  { ?>
-                        <div class="col-sm-4 col-xl-3 col-lg-4 mb-3">
-                            <div class="card">
+                        <div class="col-md-3 mb-3">
+                            <div class="card " style="max-height:320px">
+                                <a href="<?php echo base_url(); ?>review?course=<?php echo $r->product_id; ?>&segment=<?php echo $course; ?>"
+                                    style="text-decoration:none; color:#fff">
 
-                                <img class="card-img-top" style="height: 260px;"
-                                    src="<?php echo base_url(); ?>uploads/product/image/<?php echo $r->product_image; ?>"
-                                    alt="<?php echo $r->product_name; ?>">
-                                <div class="card-body text-center">
-                                    <h5><?php echo $r->product_name; ?></h5>
-                                    <div class="popular-star-rating m-2">
-                                        <?php for ($i = 1; $i <= 5; $i++) { ?>
-                                        <i
-                                            class="fa fa-star<?php echo ($r->product_rating >= $i) ? ' text-yellow' : ''; ?>"></i>
-                                        <?php } ?>
+                                    <div style=" display:flex;justify-content:center; align-items:center;">
+
+                                        <img class="m-2"
+                                            src="<?php echo base_url(); ?>uploads/product/image/<?php echo $r->product_image; ?>"
+                                            alt="<?php echo $r->product_name; ?>"
+                                            style="width: 200px; height:200px; ">
                                     </div>
-                                    <hr>
-                                    <a href="<?php echo base_url(); ?>review?course=<?php echo $r->product_id; ?>&segment=<?php echo $course; ?>"
-                                        style="text-decoration:none; ">
-                                        <h6>VEIW PROGRAM</h6>
-                                    </a>
-                                    <!-- <p class="card-text rating-number">
+
+                                    <div class="card-body text-center ">
+                                        <h5>
+                                            <?php echo $r->product_name; ?>
+                                        </h5>
+                                        <div class="popular-star-rating m-2">
+                                            <?php if ($r->product_rating == 1) { ?>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <?php } ?>
+                                            <?php if ($r->product_rating == 2) { ?>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <?php } ?>
+                                            <?php if ($r->product_rating == 3) { ?>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <?php } ?>
+                                            <?php if ($r->product_rating == 4) { ?>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star"></i>
+                                            <?php } ?>
+                                            <?php if ($r->product_rating == 5) { ?>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <i class="fa fa-star text-yellow"></i>
+                                            <?php } ?>
+                                        </div>
+                                        <p class="card-text rating-number">
                                             <img src="<?php echo base_url(); ?>/assets/images/Star.png" alt="">3.2
                                             </p> -->
                                 </div>
@@ -1087,4 +1124,4 @@ $('.owl-carousel').owlCarousel({
 })
 </script>
 
-<!--content end
+<!--content end -->
