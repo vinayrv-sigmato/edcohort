@@ -1699,10 +1699,10 @@ background: linear-gradient(0deg, rgba(244,244,244,1) 0%, rgba(244,244,244,0.513
   margin-right: 18px;
   text-align: center;
 }
-.course-img {
+/* .course-img {
   padding: 12px;
   text-align-last: end;
-}
+} */
 .review-footer-right a:last-child {
   margin-right: 0;
 }

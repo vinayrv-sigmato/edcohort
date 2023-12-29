@@ -61,7 +61,7 @@ $segment = $this->input->get('segment');
     <div class="container-fluid review-top-section">
 
         <div class="row">
-            <div class="col-md-1 course-img">
+            <div class="col-md-1 course-img p-3 text-center">
 
                 <img src="<?php echo base_url(); ?>assets/images/edcohort_tp_review_logo.png" alt="">
             </div>
