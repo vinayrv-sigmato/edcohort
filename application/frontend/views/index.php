@@ -75,12 +75,24 @@ $sort_by = $this->input->get('sort_by');
 
     .how-section1 .subheading {
         font-size: 18px;
+
+    }
+
+    .img-sub-heading {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 786px) and (max-width: 1024px) {
+    .img-sub-heading {
+        font-size: 16px;
     }
 
 
 
-    .img-sub-heading {
+    .how-section1 .subheading {
         font-size: 16px;
+
     }
 }
 </style>
@@ -117,17 +129,17 @@ $sort_by = $this->input->get('sort_by');
 <div id="imageCarousel" class="carousel slide" data-ride="carousel" style="max-height: 600px; margin: 0 auto;">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="https://placekitten.com/800/400" class="d-block w-100" alt="Image 1"
-                style="max-height:400px; width: auto;">
+            <img src="https://img-c.udemycdn.com/notices/web_carousel_slide/image/e6cc1a30-2dec-4dc5-b0f2-c5b656909d5b.jpg"
+                class="d-block w-100" alt="Image 1" style="max-height:500px; width: auto; object-fit:cover;">
         </div>
         <div class="carousel-item">
-            <img src="https://placekitten.com/800/401" class="d-block w-100" alt="Image 2"
-                style="max-height: 400px; width: auto;">
+            <img src="https://img-c.udemycdn.com/notices/web_carousel_slide/image/10ca89f6-811b-400e-983b-32c5cd76725a.jpg"
+                class="d-block w-100" alt="Image 2" style="max-height:500px; width: auto; object-fit:cover;">
         </div>
-        <div class="carousel-item">
+        <!-- <div class="carousel-item">
             <img src="https://placekitten.com/800/402" class="d-block w-100" alt="Image 3"
-                style="max-height: 400px; width: auto;">
-        </div>
+                style="max-height:500px; width: auto;object-fit:cover;">
+        </div> -->
     </div>
     <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -154,8 +166,11 @@ $sort_by = $this->input->get('sort_by');
         if ($resp_getall_brand) {
             foreach ($resp_getall_brand as $r) {
         ?>
-        <div class="slide top-brands">
-            <img src="<?php echo base_url(); ?>uploads/brand/<?php echo $r->brand_image; ?>" alt="" />
+        <div class="slide top-brands text-center">
+            <div class="image-container">
+                <img src="<?php echo base_url(); ?>uploads/brand/<?php echo $r->brand_image; ?>" alt=""
+                    class="img-fluid">
+            </div>
         </div>
         <?php
             }
@@ -163,6 +178,7 @@ $sort_by = $this->input->get('sort_by');
         ?>
     </div>
 </div>
+
 
 
 
@@ -216,7 +232,7 @@ if (empty($courseid)) {
                 <path d="M17.8333 3.00033L17.8333 37.667M33 18.167L17.8333 3.00033L2.66667 18.167" stroke="#E8F9FD"
                     stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <h2>Please select your course catagory for curated view</h2>
+            <h2>Please select your course catagory for curated viewsssss</h2>
             <span>You can change this later anytime</span>
         </div>
     </div>
@@ -427,30 +443,6 @@ if (empty($courseid)) {
 <?php } ?>
 <!--start-->
 <div class="all-course-box">
-
-    <!--left start-->
-    <!--  <div class="course-left article-sidebar js-sidebar-menu">
-                                            <ul class="article-sidebar-menu js-navigation-list">
-                                               <?php if (!empty($courseid)) { ?>
-                                                <li><a href="#Popular-Brands" class="js-navigation-item active">Popular Brands</a></li>
-                                                <li><a href="#Popular-Courses" class="js-navigation-item">Popular courses</a></li>
-                                            <?php } ?>
-                                            <li><a href="#Review" class="js-navigation-item <?php if (empty($courseid)) {
-                                                                                                echo 'active';
-                                                                                            } ?>">Review</a></li>
-                                            <li><a href="#Complain" class="js-navigation-item">Complain</a></li>
-                                            <li><a href="#Compare" class="js-navigation-item">Compare</a></li>
-                                            <li><a href="#Counselling" class="js-navigation-item">Counselling</a></li>
-                                            <li><a href="#Cohort" class="js-navigation-item">Cohort</a></li>
-                                            <li><a href="#Coupons" class="js-navigation-item">Coupons</a></li>
-                                        </ul>
-                                    </div> -->
-    <!--left end-->
-
-
-
-
-
     <!--right start-->
     <div class="course-right">
         <?php if (!empty($courseid)) { ?>
@@ -463,42 +455,56 @@ if (empty($courseid)) {
             <div class="course-inner-row">
 
                 <div class="course-section-title">
-                    <h2>Popular Brands</h2>
-                    <p>Got the course, but worried about the brand?<br />
-                        Read about all brands and their offerings here.</p>
+
+
+                    <div class="d-flex  justify-content-center ">
+                        <h2>Popular Brands</h2>
+
+                    </div>
+                    <div class="d-flex  justify-content-center ">
+
+                        <p>Got the course, but worried about the brand?<br />
+                            Read about all brands and their offerings here.</p>
+                    </div>
                 </div>
 
                 <div class="container p-0">
                     <div class="row">
                         <?php foreach ($resp_get_brand as $brand) { ?>
-                        <div class="col-md-3 mb-3">
-                            <div class="card " style="height:300px">
-                                <div style="display:flex; justify-content:center; align-items:center;">
-                                    <img src=" <?php echo base_url(); ?>uploads/brand/<?php echo $brand->brand_image; ?>"
-                                        class="card-img-top m-2" alt="<?php echo $brand->brand_name; ?>"
-                                        style="width: 150px; height: 150px;">
-                                </div>
-                                <div class="card-body text-center m-3">
+                        <div class="col-sm-4 col-xl-3 col-lg-4 mb-3">
+                            <div class="card ">
+                                <img class="card-img-top " style="height: 260px;"
+                                    src="<?php echo base_url(); ?>uploads/brand/<?php echo $brand->brand_image; ?>"
+                                    alt="<?php echo $brand->brand_name; ?>">
+                                <div class="card-body text-center ">
                                     <h5 class="card-title"><?php echo $brand->brand_name; ?></h5>
-                                    <div class="popular-star-rating">
+                                    <div class="popular-star-rating m-2">
                                         <i class="fa fa-star text-yellow"></i>
                                         <i class="fa fa-star text-yellow"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>
-                                    <p class="card-text rating-number">
+                                    <hr>
+                                    <a href="#" style="text-decoration:none; ">
+                                        <h6>VEIW BRAND</h6>
+                                    </a>
+                                    <!-- <p class=" card-text rating-number">
                                         <img src="<?php echo base_url(); ?>/assets/images/Star.png" alt="">3.2
-                                    </p>
+                                        </p> -->
                                 </div>
                             </div>
                         </div>
                         <?php } ?>
                     </div>
                 </div>
-                <div style="display:flex; justify-content:center; align-item:center;"><a
-                        href=" <?php echo base_url(); ?>brands">See all
-                        <img src="<?php echo base_url(); ?>assets/images/see-arrow.png" alt="" /></a></div>
+
+                <div class="d-flex justify-content-center m-5">
+                    <a href="<?php echo base_url(); ?>brands" class="btn btn-primary">
+                        VIEW ALL BRANDS
+                    </a>
+                </div>
+
                 <?php }
                     ?>
             </div>
@@ -516,83 +522,54 @@ if (empty($courseid)) {
         <div class="course-row article-section" id="Popular-Courses">
             <div class="course-inner-row">
 
-                <div class="course-section-title">
-                    <h2>Popular Courses</h2>
-                    <p>Got the course, but worried about the brand?<br />
-                        Read about all brands and their offerings here.</p>
+                <div class="course-section-title ">
+                    <div class="d-flex  justify-content-center ">
+                        <h2>Popular Courses</h2>
+
+                    </div>
+                    <div class="d-flex  justify-content-center ">
+
+                        <p>Got the course, but worried about the brand?</p>
+                    </div>
+
                 </div>
 
                 <div class="container p-0">
                     <div class="row">
-                        <?php foreach ($resp_get_course as $course)  { ?>
-                        <div class="col-md-3 mb-3">
-                            <div class="card " style="max-height:320px">
-                                <a href="<?php echo base_url(); ?>review?course=<?php echo $course->product_id; ?>&segment=<?php echo $class->id; ?>"
-                                    style="text-decoration:none; color:#fff">
+                        <?php foreach ($resp_get_course as $r)  { ?>
+                        <div class="col-sm-4 col-xl-3 col-lg-4 mb-3">
+                            <div class="card">
 
-                                    <div style=" display:flex;justify-content:center; align-items:center;">
-
-                                        <img class="m-2"
-                                            src="<?php echo base_url(); ?>uploads/product/image/<?php echo $course->product_image; ?>"
-                                            alt="<?php echo $course->product_name; ?>"
-                                            style="width: 200px; height:200px; ">
+                                <img class="card-img-top" style="height: 260px;"
+                                    src="<?php echo base_url(); ?>uploads/product/image/<?php echo $r->product_image; ?>"
+                                    alt="<?php echo $r->product_name; ?>">
+                                <div class="card-body text-center">
+                                    <h5><?php echo $r->product_name; ?></h5>
+                                    <div class="popular-star-rating m-2">
+                                        <?php for ($i = 1; $i <= 5; $i++) { ?>
+                                        <i
+                                            class="fa fa-star<?php echo ($r->product_rating >= $i) ? ' text-yellow' : ''; ?>"></i>
+                                        <?php } ?>
                                     </div>
-
-                                    <div class="card-body text-center ">
-                                        <h5>
-                                            <?php echo $course->product_name; ?>
-                                        </h5>
-                                        <div class="popular-star-rating m-2">
-                                            <?php if ($course->product_rating == 1) { ?>
-                                            <i class="fa fa-star text-yellow"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <?php } ?>
-                                            <?php if ($course->product_rating == 2) { ?>
-                                            <i class="fa fa-star text-yellow"></i>
-                                            <i class="fa fa-star text-yellow"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <?php } ?>
-                                            <?php if ($course->product_rating == 3) { ?>
-                                            <i class="fa fa-star text-yellow"></i>
-                                            <i class="fa fa-star text-yellow"></i>
-                                            <i class="fa fa-star text-yellow"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <?php } ?>
-                                            <?php if ($course->product_rating == 4) { ?>
-                                            <i class="fa fa-star text-yellow"></i>
-                                            <i class="fa fa-star text-yellow"></i>
-                                            <i class="fa fa-star text-yellow"></i>
-                                            <i class="fa fa-star text-yellow"></i>
-                                            <i class="fa fa-star"></i>
-                                            <?php } ?>
-                                            <?php if ($course->product_rating == 5) { ?>
-                                            <i class="fa fa-star text-yellow"></i>
-                                            <i class="fa fa-star text-yellow"></i>
-                                            <i class="fa fa-star text-yellow"></i>
-                                            <i class="fa fa-star text-yellow"></i>
-                                            <i class="fa fa-star text-yellow"></i>
-                                            <?php } ?>
-                                        </div>
-                                        <p class="card-text rating-number">
+                                    <hr>
+                                    <a href="<?php echo base_url(); ?>review?course=<?php echo $r->product_id; ?>&segment=<?php echo $course; ?>"
+                                        style="text-decoration:none; ">
+                                        <h6>VEIW PROGRAM</h6>
+                                    </a>
+                                    <!-- <p class="card-text rating-number">
                                             <img src="<?php echo base_url(); ?>/assets/images/Star.png" alt="">3.2
-                                        </p>
-                                    </div>
-                                </a>
+                                            </p> -->
+                                </div>
+
                             </div>
                         </div>
                         <?php } ?>
                     </div>
                 </div>
 
-
-                <div class="see-row"><a href="<?php echo base_url(); ?>course">See all <img
-                            src="<?php echo base_url(); ?>assets/images/see-arrow.png" alt="" /></a></div>
+                <div class="d-flex justify-content-center m-5"><a href="<?php echo base_url(); ?>course"
+                        class="btn btn-primary">VIEW ALL COURSES</a>
+                </div>
 
             </div>
         </div>
@@ -600,249 +577,231 @@ if (empty($courseid)) {
         <?php
                 }
             }  ?>
+    </div>
+</div>
 
-        <!-- Popular Brands --->
-        <!--<div class="brand-align pt-5 content-bg">
-                    <h2>Popular Brands</h2>
-                  </div>
-                <div class="owl-carousel owl-theme content-bg">
-    <?php /*if ($brand_records) {
-        foreach ($brand_records as $brand) { ?>
-            <div class="item item-owl">
-                <img src="<?php echo base_url(); ?>uploads/brand/<?php echo $brand->brand_image; ?>" class="img-fluid" alt="<?php echo $brand->brand_name; ?>" style="height: 100px; width:100px;">
-                <div class="img-content-align">
-                    <h5><?php echo $brand->brand_name; ?></h5>
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-md-4 col-lg-6">
+            <div class="how-section1s ">
+                <div class="brand-align pt-3 ">
+                    <h4>Popular Brands</h4>
+
+                    <p class="text-muted img-sub-heading pt-3">Thousands of people, everyday, make a
+                        career
+                        choice their friend has made. In this world full of trials and errors, we dived
+                        deep
+                        to
+                        find out how mentoring and well planned out career choices has and can help any
+                        individual hit their goals and achieve their ambitions as planned.</p>
+                    <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE BRAND</a>
                 </div>
             </div>
-        <?php }
-    } */ ?>
-</div> 
 
-        <div class="container pt-5">
+        </div>
+
+        <div class="col-md-8 col-lg-6">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="how-section1s ">
-                        <div class="brand-align pt-3 ">
-                            <h4>Popular Brands</h4>
-
-                            <p class="text-muted img-sub-heading pt-3">Thousands of people, everyday, make a
-                                career
-                                choice their friend has made. In this world full of trials and errors, we dived
-                                deep
-                                to
-                                find out how mentoring and well planned out career choices has and can help any
-                                individual hit their goals and achieve their ambitions as planned.</p>
-                            <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE BRAND</a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-md-8">
-                    <div class="row">
-                        <?php if ($brand_records) {
+                <?php if ($brand_records) {
                                 foreach ($brand_records as $brand) { ?>
-                        <div class="col-3 col-md-3 pt-3 pb-3 text-center">
-                            <img src="<?php echo base_url(); ?>uploads/brand/<?php echo $brand->brand_image; ?>"
-                                class="img-fluid" alt="<?php echo $brand->brand_name; ?>"
-                                style="height: 50px; width:auto;">
+                <div class="col-3 col-md-3 pt-3 pb-3 text-center">
+                    <img src="<?php echo base_url(); ?>uploads/brand/<?php echo $brand->brand_image; ?>"
+                        class="img-fluid" alt="<?php echo $brand->brand_name; ?>" style="height: 50px; width:auto;">
 
-                        </div>
-                        <?php }
+                </div>
+                <?php }
                             } ?>
-                    </div>
-                </div>
-
             </div>
         </div>
 
-        <!-- Ends Popular Brands --->
+    </div>
+</div>
 
-        <!--Choose Course Sectiont-->
+<!-- Ends Popular Brands --->
+
+<!--Choose Course Sectiont-->
 
 
-        <!-- **** Choose Course Section  **** --->
+<!-- **** Choose Course Section  **** --->
 
-        <div class="container">
-            <div class="how-section1 ">
-                <div class="row ">
-                    <div class="col-12 col-md-4 how-img"
-                        style="display:flex; justify-content:center; align-items:center">
-                        <img src="<?php echo base_url(); ?>assets/images/cst-review.webp"
-                            class="rounded-circle img-fluid" alt="" style="width: 400px;" />
-                    </div>
-                    <div class="col-12 col-md-8 ">
-                        <h4>Review</h4>
-                        <h4 class="subheading">Thousands of people, everyday, make a career choice their friend
-                            has
-                            made. In this world full of trials and errors, we dived deep to find out how
-                            mentoring
-                            and
-                            well planned out career choices has and can help any individual hit their goals and
-                            achieve
-                            their ambitions as planned.</h4>
-                        <p class="text-muted img-sub-heading">We have prepared an analytics driven real life
-                            case
-                            study
-                            here, find out how it can work for you too!</p>
-                        <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8">
-                        <h4>Complain</h4>
-                        <h4 class="subheading">Thousands of people, everyday, make a career choice their friend
-                            has
-                            made. In this world full of trials and errors, we dived deep to find out how
-                            mentoring
-                            and
-                            well planned out career choices has and can help any individual hit their goals and
-                            achieve
-                            their ambitions as planned.</h4>
-                        <p class="text-muted img-sub-heading">We have prepared an analytics driven real life
-                            case
-                            study
-                            here, find out how it can work for you too!</p>
-                        <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
-                    </div>
-                    <div class="col-md-4 how-img" style="display:flex; justify-content:center; align-items:center">
-                        <img src="<?php echo base_url(); ?>assets/images/cmp-img.jpg" class="rounded-circle img-fluid"
-                            alt="" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 how-img" style="display:flex; justify-content:center; align-items:center">
-                        <img src="<?php echo base_url(); ?>assets/images/cmpr-img.jpg" class="rounded-circle img-fluid"
-                            alt="" />
-                    </div>
-                    <div class="col-md-8">
-                        <h4>Compare</h4>
-                        <h4 class="subheading">With GetLance, you have the freedom and flexibility to control
-                            when,
-                            where, and how you work. Each project includes an online workspace shared by you and
-                            your
-                            client, allowing you to:</h4>
-                        <p class="text-muted img-sub-heading">Send and receive files. Deliver digital assets in
-                            a
-                            secure
-                            environment.
-                            Share feedback in real time. Use GetLance Messages to communicate via text, chat, or
-                            video.
-                            Use our mobile app. Many features can be accessed on your mobile phone when on the
-                            go.
-                        </p>
-                        <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8">
-                        <h4>Counselling</h4>
-                        <h4 class="subheading">All projects include GetLance Payment Protection � helping ensure
-                            that
-                            you get paid for all work successfully completed through the freelancing website.
-                        </h4>
-                        <p class="text-muted img-sub-heading">All invoices and payments happen through GetLance.
-                            Count
-                            on a simple and streamlined process.
-                            Hourly and fixed-price projects. For hourly work, submit timesheets through
-                            GetLance.
-                            For
-                            fixed-price jobs, set milestones and funds are released via GetLance escrow
-                            features.
-                            Multiple payment options. Choose a payment method that works best for you, from
-                            direct
-                            deposit or PayPal to wire transfer and more.</p>
-                        <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
-                    </div>
-                    <div class="col-md-4 how-img" style="display:flex; justify-content:center; align-items:center">
-                        <img src="<?php echo base_url(); ?>assets/images/cnslng-img.jpg"
-                            class="rounded-circle img-fluid" alt="" />
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-4 how-img" style="display:flex; justify-content:center; align-items:center">
-                        <img src="<?php echo base_url(); ?>assets/images/cohort-study-img.jpeg"
-                            class="rounded-circle img-fluid" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                        <h4>Cohort</h4>
-                        <h4 class="subheading">With GetLance, you have the freedom and flexibility to control
-                            when,
-                            where, and how you work. Each project includes an online workspace shared by you and
-                            your
-                            client, allowing you to:</h4>
-                        <p class="text-muted img-sub-heading">Send and receive files. Deliver digital assets in
-                            a
-                            secure
-                            environment.
-                            Share feedback in real time. Use GetLance Messages to communicate via text, chat, or
-                            video.
-                            Use our mobile app. Many features can be accessed on your mobile phone when on the
-                            go.
-                        </p>
-                        <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4>Coupons</h4>
-                        <h4 class="subheading">All projects include GetLance Payment Protection � helping ensure
-                            that
-                            you get paid for all work successfully completed through the freelancing website.
-                        </h4>
-                        <p class="text-muted img-sub-heading">All invoices and payments happen through GetLance.
-                            Count
-                            on a simple and streamlined process.
-                            Hourly and fixed-price projects. For hourly work, submit timesheets through
-                            GetLance.
-                            For
-                            fixed-price jobs, set milestones and funds are released via GetLance escrow
-                            features.
-                            Multiple payment options. Choose a payment method that works best for you, from
-                            direct
-                            deposit or PayPal to wire transfer and more.</p>
-                        <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
-                    </div>
-                    <div class="col-md-6 how-img" style="display:flex; justify-content:center; align-items:center">
-                        <img src="<?php echo base_url(); ?>assets/images/coupons-img.jpg"
-                            class="rounded-circle img-fluid" alt="" />
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 how-img" style="display:flex; justify-content:center; align-items:center">
-                        <img src="<?php echo base_url(); ?>assets/images/mntring-work.png"
-                            class="rounded-circle img-fluid" alt="" />
-                    </div>
-                    <div class="col-md-6">
-                        <h4>Mentoring Works! Read how</h4>
-                        <h4 class="subheading">With GetLance, you have the freedom and flexibility to control
-                            when,
-                            where, and how you work. Each project includes an online workspace shared by you and
-                            your
-                            client, allowing you to:</h4>
-                        <p class="text-muted img-sub-heading">Send and receive files. Deliver digital assets in
-                            a
-                            secure
-                            environment.
-                            Share feedback in real time. Use GetLance Messages to communicate via text, chat, or
-                            video.
-                            Use our mobile app. Many features can be accessed on your mobile phone when on the
-                            go.
-                        </p>
-                        <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
-                    </div>
-                </div>
+<div class="container">
+    <div class="how-section1 ">
+        <div class="row ">
+            <div class="col-12 col-sm-3 col-lg-4 how-img">
+                <img src="<?php echo base_url(); ?>assets/images/cst-review.webp" class="rounded-circle img-fluid"
+                    alt="" style="width: 400px;" />
+            </div>
+            <div class="col-12 col-sm-9 col-lg-8 ">
+                <h4>Review</h4>
+                <h4 class="subheading">Thousands of people, everyday, make a career choice their friend
+                    has
+                    made. In this world full of trials and errors, we dived deep to find out how
+                    mentoring
+                    and
+                    well planned out career choices has and can help any individual hit their goals and
+                    achieve
+                    their ambitions as planned.</h4>
+                <p class="text-muted img-sub-heading">We have prepared an analytics driven real life
+                    case
+                    study
+                    here, find out how it can work for you too!</p>
+                <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h4>Complain</h4>
+                <h4 class="subheading">Thousands of people, everyday, make a career choice their friend
+                    has
+                    made. In this world full of trials and errors, we dived deep to find out how
+                    mentoring
+                    and
+                    well planned out career choices has and can help any individual hit their goals and
+                    achieve
+                    their ambitions as planned.</h4>
+                <p class="text-muted img-sub-heading">We have prepared an analytics driven real life
+                    case
+                    study
+                    here, find out how it can work for you too!</p>
+                <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
+            </div>
+            <div class="col-md-4 how-img">
+                <img src="<?php echo base_url(); ?>assets/images/cmp-img.jpg" class="rounded-circle img-fluid" alt="" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 how-img">
+                <img src="<?php echo base_url(); ?>assets/images/cmpr-img.jpg" class="rounded-circle img-fluid"
+                    alt="" />
+            </div>
+            <div class="col-md-8">
+                <h4>Compare</h4>
+                <h4 class="subheading">With GetLance, you have the freedom and flexibility to control
+                    when,
+                    where, and how you work. Each project includes an online workspace shared by you and
+                    your
+                    client, allowing you to:</h4>
+                <p class="text-muted img-sub-heading">Send and receive files. Deliver digital assets in
+                    a
+                    secure
+                    environment.
+                    Share feedback in real time. Use GetLance Messages to communicate via text, chat, or
+                    video.
+                    Use our mobile app. Many features can be accessed on your mobile phone when on the
+                    go.
+                </p>
+                <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h4>Counselling</h4>
+                <h4 class="subheading">All projects include GetLance Payment Protection � helping ensure
+                    that
+                    you get paid for all work successfully completed through the freelancing website.
+                </h4>
+                <p class="text-muted img-sub-heading">All invoices and payments happen through GetLance.
+                    Count
+                    on a simple and streamlined process.
+                    Hourly and fixed-price projects. For hourly work, submit timesheets through
+                    GetLance.
+                    For
+                    fixed-price jobs, set milestones and funds are released via GetLance escrow
+                    features.
+                    Multiple payment options. Choose a payment method that works best for you, from
+                    direct
+                    deposit or PayPal to wire transfer and more.</p>
+                <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
+            </div>
+            <div class="col-md-4 how-img">
+                <img src="<?php echo base_url(); ?>assets/images/cnslng-img.jpg" class="rounded-circle img-fluid"
+                    alt="" />
             </div>
         </div>
 
-        <!-- **** End Choose Course Section  **** --->
+        <div class="row">
+            <div class="col-md-4 how-img">
+                <img src="<?php echo base_url(); ?>assets/images/cohort-study-img.jpeg" class="rounded-circle img-fluid"
+                    alt="" />
+            </div>
+            <div class="col-md-8">
+                <h4>Cohort</h4>
+                <h4 class="subheading">With GetLance, you have the freedom and flexibility to control
+                    when,
+                    where, and how you work. Each project includes an online workspace shared by you and
+                    your
+                    client, allowing you to:</h4>
+                <p class="text-muted img-sub-heading">Send and receive files. Deliver digital assets in
+                    a
+                    secure
+                    environment.
+                    Share feedback in real time. Use GetLance Messages to communicate via text, chat, or
+                    video.
+                    Use our mobile app. Many features can be accessed on your mobile phone when on the
+                    go.
+                </p>
+                <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Coupons</h4>
+                <h4 class="subheading">All projects include GetLance Payment Protection � helping ensure
+                    that
+                    you get paid for all work successfully completed through the freelancing website.
+                </h4>
+                <p class="text-muted img-sub-heading">All invoices and payments happen through GetLance.
+                    Count
+                    on a simple and streamlined process.
+                    Hourly and fixed-price projects. For hourly work, submit timesheets through
+                    GetLance.
+                    For
+                    fixed-price jobs, set milestones and funds are released via GetLance escrow
+                    features.
+                    Multiple payment options. Choose a payment method that works best for you, from
+                    direct
+                    deposit or PayPal to wire transfer and more.</p>
+                <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
+            </div>
+            <div class="col-md-6 how-img">
+                <img src="<?php echo base_url(); ?>assets/images/coupons-img.jpg" class="rounded-circle img-fluid"
+                    alt="" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 how-img">
+                <img src="<?php echo base_url(); ?>assets/images/mntring-work.png" class="rounded-circle img-fluid"
+                    alt="" />
+            </div>
+            <div class="col-md-6">
+                <h4>Mentoring Works! Read how</h4>
+                <h4 class="subheading">With GetLance, you have the freedom and flexibility to control
+                    when,
+                    where, and how you work. Each project includes an online workspace shared by you and
+                    your
+                    client, allowing you to:</h4>
+                <p class="text-muted img-sub-heading">Send and receive files. Deliver digital assets in
+                    a
+                    secure
+                    environment.
+                    Share feedback in real time. Use GetLance Messages to communicate via text, chat, or
+                    video.
+                    Use our mobile app. Many features can be accessed on your mobile phone when on the
+                    go.
+                </p>
+                <a href="https://staging.edcohort.com/" class="img-btn-explore">EXPLORE</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- **** End Choose Course Section  **** --->
 
 
-        <!--row start-->
-        <!--<div class="course-row article-section content-bg" id="Review">
+<!--row start-->
+<!--<div class="course-row article-section content-bg" id="Review">
                                         <div class="course-inner-row">
 
                                             <div class="course-section-title">
@@ -865,11 +824,11 @@ if (empty($courseid)) {
 
                                         </div>
                                     </div> -->
-        <!--row end-->
+<!--row end-->
 
 
-        <!--row start-->
-        <!-- <div class="course-row article-section panel" id="Complain">
+<!--row start-->
+<!-- <div class="course-row article-section panel" id="Complain">
                                         <div class="course-inner-row">
 
                                             <div class="course-section-title">
@@ -892,11 +851,11 @@ if (empty($courseid)) {
 
                                         </div>
                                     </div> -->
-        <!--row end-->
+<!--row end-->
 
 
-        <!--row start-->
-        <!--<div class="course-row article-section content-bg" id="Compare">
+<!--row start-->
+<!--<div class="course-row article-section content-bg" id="Compare">
                                         <div class="course-inner-row">
 
                                             <div class="course-section-title">
@@ -919,11 +878,11 @@ if (empty($courseid)) {
 
                                         </div>
                                     </div> -->
-        <!--row end-->
+<!--row end-->
 
 
-        <!--row start-->
-        <!-- <div class="course-row article-section " id="Counselling">
+<!--row start-->
+<!-- <div class="course-row article-section " id="Counselling">
                                         <div class="course-inner-row">
 
                                             <div class="course-section-title">
@@ -946,8 +905,8 @@ if (empty($courseid)) {
 
                                         </div>
                                     </div> -->
-        <!--row end-->
-        <!-- <div class="content-bg">
+<!--row end-->
+<!-- <div class="content-bg">
             <div class="brand-align pt-5">
                 <h2>Popular Courses</h2>
             </div>
@@ -967,8 +926,8 @@ if (empty($courseid)) {
         </div> -->
 
 
-        <!--row start-->
-        <!--  <div class="course-row article-section" id="Cohort">
+<!--row start-->
+<!--  <div class="course-row article-section" id="Cohort">
                                         <div class="course-inner-row">
 
                                             <div class="course-section-title">
@@ -991,11 +950,11 @@ if (empty($courseid)) {
 
                                         </div>
                                     </div> -->
-        <!--row end-->
+<!--row end-->
 
 
-        <!--row start-->
-        <!-- <div class="course-row article-section content-bg" id="Coupons">
+<!--row start-->
+<!-- <div class="course-row article-section content-bg" id="Coupons">
                                         <div class="course-inner-row">
 
                                             <div class="course-section-title">
@@ -1018,11 +977,11 @@ if (empty($courseid)) {
 
                                         </div>
                                     </div> -->
-        <!--row end-->
+<!--row end-->
 
 
-        <!--row start-->
-        <!--<div class="course-row article-section" id="Mentoring">
+<!--row start-->
+<!--<div class="course-row article-section" id="Mentoring">
                                         <div class="course-inner-row">
 
                                             <div class="video-row d-flex justify-content-between">
@@ -1047,43 +1006,43 @@ if (empty($courseid)) {
                                     </div> -->
 
 
-        <!--row end-->
+<!--row end-->
 
 
 
-        <div class="brand-align pt-5 ">
-            <h2>Get In Touch</h2>
-        </div>
+<div class="brand-align pt-5 ">
+    <h2>Get In Touch</h2>
+</div>
 
-        <div class="grey-bg grey-light-bg pt-4 pb-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-12 col-lg-4 text-center">
-                        <img class="img-fluid" src="<?php //echo base_url(); 
+<div class="grey-bg grey-light-bg pt-4 pb-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 col-lg-4 text-center">
+                <img class="img-fluid" src="<?php //echo base_url(); 
                                                         ?>assets/images/get-in-touch.jpg">
-                        <p class="get-touch-font pt-2"><b>Find Our Expierance Center</b></p>
-                        <p>Talk To Our Experts for a Free Consultation</p>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-lg-4 text-center">
-                        <img class="img-fluid" src="<?php //echo base_url(); 
-                                                        ?>assets/images/get-in-touch.jpg">
-                        <p class="get-touch-font pt-2"><b>Find Our Expierance Center</b></p>
-                        <p>Talk To Our Experts for a Free Consultation</p>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-lg-4 text-center">
-                        <img class="img-fluid" src="<?php //echo base_url(); 
-                                                        ?>assets/images/get-in-touch.jpg">
-                        <p class="get-touch-font pt-2"><b>Find Our Expierance Center</b></p>
-                        <p>Talk To Our Experts for a Free Consultation</p>
-                    </div>
-
-                </div>
-
+                <p class="get-touch-font pt-2"><b>Find Our Expierance Center</b></p>
+                <p>Talk To Our Experts for a Free Consultation</p>
             </div>
+            <div class="col-md-4 col-sm-12 col-lg-4 text-center">
+                <img class="img-fluid" src="<?php //echo base_url(); 
+                                                        ?>assets/images/get-in-touch.jpg">
+                <p class="get-touch-font pt-2"><b>Find Our Expierance Center</b></p>
+                <p>Talk To Our Experts for a Free Consultation</p>
+            </div>
+            <div class="col-md-4 col-sm-12 col-lg-4 text-center">
+                <img class="img-fluid" src="<?php //echo base_url(); 
+                                                        ?>assets/images/get-in-touch.jpg">
+                <p class="get-touch-font pt-2"><b>Find Our Expierance Center</b></p>
+                <p>Talk To Our Experts for a Free Consultation</p>
+            </div>
+
         </div>
 
     </div>
-    <!--right end-->
+</div>
+
+</div>
+<!--right end-->
 
 </div>
 <!--end-->

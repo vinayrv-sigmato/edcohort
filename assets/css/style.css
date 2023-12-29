@@ -263,7 +263,21 @@ Banner
 }
 
 /*** Image and Content Display **/
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust the shadow as needed */
+  padding: 10px; /* Add padding for spacing if desired */
+  border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+}
 
+.popular-img {
+  width: 300px;
+  border: 2px solid #eee;
+}
 .how-section1 {
   padding: 20px;
 }
@@ -286,6 +300,9 @@ Banner
   margin-top: 10%;
 }
 .how-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 .how-img img {
@@ -629,12 +646,12 @@ Home
 }
 /* .course-row:nth-child(2n){ background: #fff; } **/
 .course-inner-row {
-  max-width: 935px;
+  /* max-width: 935px; */
   margin: 0 auto;
 }
 
 .course-section-title {
-  margin-bottom: 50px;
+  margin: 20px 0px;
 }
 .course-section-title h2 {
   color: #2256cd;
@@ -706,9 +723,14 @@ Home
   color: #ffb802;
 }
 
-.see-row {
-  text-align: center;
-  margin-top: 30px;
+.see-all a {
+  display: flex;
+  justify-content: center;
+
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+  align-items: center;
 }
 /* .see-row:after {
   content: "";
