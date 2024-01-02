@@ -12,7 +12,7 @@ $segment = $this->input->get('segment');
 // print_ex($_GET);
 ?>
 <!--banner start-->
-<div class="inner-banner row">
+<div class="inner-banner d-flex">
     <div class="col-md-3 breadcrumb-design">
         <div class="breadcrumb">
             <ul>
@@ -326,7 +326,7 @@ $segment = $this->input->get('segment');
                         </button>
                         <?php } ?>
                     </div>
-                    <div class="brand-review-table">
+                    <div class="brand-review-table p-3">
                         <table>
                             <tr>
                                 <th colspan="4">Overall</th>

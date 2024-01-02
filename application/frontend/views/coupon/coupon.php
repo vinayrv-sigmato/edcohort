@@ -12,7 +12,7 @@ $segment = $this->input->get('segment');
   //  print_ex($product_list);
 ?>
 <!--banner start-->
-<div class="inner-banner row">
+<div class="inner-banner d-flex">
     <div class="col-md-3 breadcrumb-design">
 
         <div class="breadcrumb">
@@ -284,6 +284,49 @@ $segment = $this->input->get('segment');
                                     <input type="hidden" class="form-control" name="coupon_count" id="coupon_count"
                                         placeholder="Your Name" value="<?php echo $coupon->coupon_count; ?>">
                                 </div>
+
+                                <!-- new added -->
+
+                                <div class="coupon-container mt-3">
+                                    <div class="confirm-buying">
+                                        <h3 class="mb-3">Confirm Buying</h3>
+                                        <div class=" coupon-options">
+                                            <?php foreach($coupon_records as $coupon): ?>
+                                            <label class="coupon-option">
+                                                <input type="radio" class="btn-check" name="confirm_buying"
+                                                    id="confirm_bying_<?php echo $coupon->coupon_id; ?>"
+                                                    onclick="couponConfirmBuying(<?php echo $coupon->coupon_id; ?>)"
+                                                    value="<?php echo $coupon->coupon_id; ?>">
+                                                <span
+                                                    class="btn btn-outline-primary"><?php echo $coupon->coupon_code; ?></span>
+                                            </label>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+
+                                    <div class="ready-buyers" style="display:none;">
+                                        <h3>Ready Buyers</h3>
+                                        <div class="buyer-counts">
+                                            <?php foreach($coupon_records as $coupon): ?>
+                                            <div class="buyer-count">
+                                                <span class="badge bg-primary"
+                                                    id="label_ready_buying_<?php echo $coupon->coupon_id; ?>">
+                                                    <?php echo $coupon->coupon_count; ?>
+                                                </span>
+                                            </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" class="form-control" name="course" id="course"
+                                    value="<?php echo $product_list['0']->product_id; ?>">
+                                <input type="hidden" class="form-control" name="user_id" id="user_id"
+                                    value="<?php echo $this->session->userdata('user_id'); ?>">
+                                <input type="hidden" class="form-control" name="coupon_count" id="coupon_count"
+                                    value="<?php echo $coupon->coupon_count; ?>">
+
+                                <!-- new added end -->
                                 <br />
                                 <div class="btn-list text-right">
 
@@ -291,7 +334,7 @@ $segment = $this->input->get('segment');
                                 </div>
                             </div>
                             <?php if($this->session->userdata('user_id')){ ?>
-                            <div class="ms-3">
+                            <div class="text-center">
                                 <button type=" button" onClick="conformCoupon()"
                                     class="btn btn-primary text-right btn-md mb-1">Get
                                     Your
@@ -305,8 +348,8 @@ $segment = $this->input->get('segment');
                                 <!--     <button type="button" class="review-btn" data-bs-effect="effect-scale" data-bs-toggle="modal" data-bs-target="#exampleModal3">Get Your Coupon Here</button> -->
                                 <?php } ?>
                                 <!-- <a href="javascript:void(0)" class="review-btn" data-bs-effect="effect-scale" data-bs-toggle="modal" data-bs-target="#login-button">Get Your Coupon Here</a> -->
-                                <a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
+                                <a href="#" class="text-decoration-none ms-1"><svg width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M16.5004 3.74998C16.5003 2.87013 16.8096 2.01826 17.3741 1.3434C17.9386 0.668542 18.7225 0.213678 19.5885 0.0583884C20.4546 -0.0969011 21.3476 0.0572728 22.1115 0.493936C22.8753 0.9306 23.4613 1.62195 23.7669 2.44702C24.0725 3.27209 24.0783 4.17835 23.7832 5.00724C23.4881 5.83613 22.9109 6.53487 22.1527 6.9812C21.3945 7.42753 20.5034 7.59304 19.6355 7.44876C18.7675 7.30448 17.978 6.85961 17.4049 6.19198L7.3279 10.872C7.55956 11.6061 7.55956 12.3938 7.3279 13.128L17.4049 17.808C18.0107 17.1035 18.8564 16.6489 19.7782 16.5325C20.7 16.416 21.6322 16.6458 22.3942 17.1775C23.1561 17.7092 23.6936 18.5048 23.9024 19.4102C24.1112 20.3155 23.9764 21.2662 23.5243 22.0778C23.0721 22.8895 22.3347 23.5044 21.455 23.8034C20.5753 24.1024 19.6159 24.0642 18.7628 23.6961C17.9097 23.328 17.2236 22.6564 16.8375 21.8113C16.4513 20.9662 16.3927 20.0079 16.6729 19.122L6.5959 14.442C6.09705 15.0233 5.43212 15.438 4.69057 15.6301C3.94901 15.8222 3.1664 15.7827 2.448 15.5167C1.72961 15.2507 1.10991 14.7711 0.672259 14.1424C0.234606 13.5137 0 12.766 0 12C0 11.2339 0.234606 10.4863 0.672259 9.85755C1.10991 9.22884 1.72961 8.74923 2.448 8.48326C3.1664 8.21729 3.94901 8.17772 4.69057 8.36985C5.43212 8.56199 6.09705 8.97663 6.5959 9.55798L16.6729 4.87798C16.5582 4.51298 16.5 4.13258 16.5004 3.74998Z"
                                             fill="#A0A0A0" />

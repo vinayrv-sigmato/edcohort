@@ -13,7 +13,7 @@ $segment = $this->input->get('segment');
    // print_ex($_GET);
 ?>
 <!--banner start-->
-<div class="inner-banner row">
+<div class="inner-banner d-flex">
     <div class="col-md-3 breadcrumb-design">
         <div class="breadcrumb">
             <ul>
@@ -317,7 +317,7 @@ $segment = $this->input->get('segment');
                                         <!-- <div class="bottom-left">No. Of Counselling <b>150+</b></div> -->
                                         <div class="bottom-right"><a href="#">Check availability</a></div>
                                     </div>
-                                    <a href="<?php echo base_url(); ?>counselling-confirm/<?php echo $counselling->c_id;  ?>"
+                                    <a href="<?php echo base_url(); ?>counselli ng-confirm/<?php echo $counselling->c_id;  ?>"
                                         class="book-btn">Book now</a>
                                     <!--   <?php if($this->session->userdata('user_id')){ ?>
                                             <button type="button" class="book-btn" onclick="bookCounselling('<?php echo $counselling->c_id; ?>','<?php echo $this->session->userdata('user_id'); ?>')">Book Now</button>

@@ -23,7 +23,7 @@ if($get_breadcrumb)
      $breadcrumb_name2 = $get_breadcrumb->breadcrumb2_name;
 }
 ?>
-<div class="inner-banner row">
+<div class="inner-banner d-flex">
     <div class="col-md-3 breadcrumb-design">
         <div class="breadcrumb">
             <ul>

@@ -31,7 +31,7 @@ if($get_breadcrumb)
         </ul>
     </div> -->
 
-<div class="inner-banner row">
+<div class="inner-banner d-flex">
     <div class="col-md-3 breadcrumb-design">
         <div class="breadcrumb">
             <ul>

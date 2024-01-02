@@ -1721,10 +1721,12 @@ background: linear-gradient(0deg, rgba(244,244,244,1) 0%, rgba(244,244,244,0.513
   margin-right: 18px;
   text-align: center;
 }
-/* .course-img {
+.course-img {
   padding: 12px;
-  text-align-last: end;
-} */
+  /* text-align-last: end;
+   */
+  text-align: center;
+}
 .review-footer-right a:last-child {
   margin-right: 0;
 }
@@ -1977,7 +1979,7 @@ background: linear-gradient(0deg, rgba(244,244,244,1) 0%, rgba(244,244,244,0.513
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 15px;
-  width: calc(33% - 8px);
+  width: calc(23% - 8px);
   margin: 0 8px 20px 0;
 }
 
@@ -2034,7 +2036,7 @@ background: linear-gradient(0deg, rgba(244,244,244,1) 0%, rgba(244,244,244,0.513
 }
 .bottom-right a {
   color: #3554fe;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   font-size: 16px;
 }
@@ -2042,13 +2044,13 @@ background: linear-gradient(0deg, rgba(244,244,244,1) 0%, rgba(244,244,244,0.513
   display: block;
   text-align: center;
   width: 100%;
-  height: 64px;
+  height: 40px;
   border: 1px solid #3554fe;
   border-radius: 10px;
   color: #3554fe;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 64px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 39px;
   text-decoration: none;
 }
 .book-btn:hover {
