@@ -249,9 +249,9 @@ $segment = $this->input->get('segment');
                 } ?>
                         <!--col-->
                         <?php if (!empty($compare_list2)) {
-                            print_R($compare_list2);
+                           //print_R($compare_list2);
                     foreach ($compare_list2 as $comp_list2) { 
-                        $resp_brand_details2 =  get_brand_details($comp_list1->brand_id);
+                        $resp_brand_details2 =  get_brand_details($comp_list2->brand_id);
                        if($resp_brand_details2)
                        {
                         ?>
@@ -260,7 +260,7 @@ $segment = $this->input->get('segment');
                                 <div class="popular-col-image"><img
                                         src="<?php echo base_url(); ?>uploads/brand/<?php echo $resp_brand_details2->brand_image; ?>"
                                         alt="" /></div>
-                                <h3><?php echo $comp_list2->brand_name; ?></h3>
+                                <h3><?php echo $resp_brand_details2->brand_name; ?></h3>
                                 <div>
                                     <!--
                                     <?php if ($comp_list2->overall_ranking == 1) { ?>
@@ -294,14 +294,19 @@ $segment = $this->input->get('segment');
                         <?php } }
                 } ?>
                         <?php if (!empty($compare_list3)) {
-                    foreach ($compare_list3 as $comp_list3) { ?>
+                    foreach ($compare_list3 as $comp_list3) { 
+                        $resp_brand_details3 =  get_brand_details($comp_list3->brand_id);
+                        if($resp_brand_details3)
+                        {
+                        ?>
                         <div class="popular-col">
-                            <a href="<?php echo $comp_list3->brand_slug; ?>">
+                            <a href="<?php echo $resp_brand_details3->brand_slug; ?>">
                                 <div class="popular-col-image"><img
-                                        src="<?php echo base_url(); ?>uploads/brand/<?php echo $comp_list3->brand_image; ?>"
+                                        src="<?php echo base_url(); ?>uploads/brand/<?php echo $resp_brand_details3->brand_image; ?>"
                                         alt="" /></div>
-                                <h3><?php echo $comp_list3->brand_name; ?></h3>
+                                <h3><?php echo $resp_brand_details3->brand_name; ?></h3>
                                 <div>
+                                    <!--
                                     <?php if ($comp_list3->overall_ranking == 1) { ?>
                                     <i class="fa fa-star text-yellow"></i><i class="fa fa-star"></i> <i
                                         class="fa fa-star"></i>
@@ -326,10 +331,12 @@ $segment = $this->input->get('segment');
                                     <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i>
                                     <i class="fa fa-star text-yellow"></i>
                                     <?php } ?>
+
+                                    -->
                                 </div>
                             </a>
                         </div>
-                        <?php }
+                        <?php } }
                 } ?>
                         <?php if ($comparison_id >= 3) { ?>
                         <?php } else { ?>
@@ -346,20 +353,23 @@ $segment = $this->input->get('segment');
                                 <th colspan="4">Overall</th>
                             </tr>
                             <tr>
+                                <?php
+                                print_R($compare_list1);
+                                ?>
                                 <td>Overall ratings</td>
                                 <?php if (!empty($compare_list1)) { ?>
                                 <td><span
-                                        class="rating-number"><?php echo @$compare_list1[0]->overall_ranking; ?></span>
+                                        class="rating-number"><?php echo @$compare_list1[0]->overall_brand; ?></span>
                                 </td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list2)) { ?>
                                 <td><span
-                                        class="rating-number"><?php echo @$compare_list2[0]->overall_ranking; ?></span>
+                                        class="rating-number"><?php echo @$compare_list2[0]->overall_brand; ?></span>
                                 </td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list3)) { ?>
                                 <td><span
-                                        class="rating-number"><?php echo @$compare_list3[0]->overall_ranking; ?></span>
+                                        class="rating-number"><?php echo @$compare_list3[0]->overall_brand; ?></span>
                                 </td>
                                 <?php } ?>
                             </tr>
@@ -386,15 +396,15 @@ $segment = $this->input->get('segment');
                             <tr>
                                 <td>Aging of Co.</td>
                                 <?php if (!empty($compare_list1)) {
-                            print_R($compare_list1);
+                            //print_R($compare_list1);
                             ?>
-                                <td><?php echo @$compare_list1[0]->course_complition; ?></td>
+                                <td><?php echo @$compare_list1[0]->aging; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list2)) { ?>
-                                <td><?php echo @$compare_list2[0]->course_complition; ?></td>
+                                <td><?php echo @$compare_list2[0]->aging; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list3)) { ?>
-                                <td><?php echo @$compare_list3[0]->course_complition; ?></td>
+                                <td><?php echo @$compare_list3[0]->aging; ?></td>
                                 <?php } ?>
                             </tr>
                             <tr>
@@ -403,13 +413,13 @@ $segment = $this->input->get('segment');
                             <tr>
                                 <td>Academic Results</td>
                                 <?php if (!empty($compare_list1)) { ?>
-                                <td><?php echo @$compare_list1[0]->academic_results; ?></td>
+                                <td><?php echo @$compare_list1[0]->acadmic_quality; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list2)) { ?>
-                                <td><?php echo @$compare_list2[0]->academic_results; ?></td>
+                                <td><?php echo @$compare_list2[0]->acadmic_quality; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list3)) { ?>
-                                <td><?php echo @$compare_list3[0]->academic_results; ?></td>
+                                <td><?php echo @$compare_list3[0]->acadmic_quality; ?></td>
                                 <?php } ?>
                             </tr>
                             <tr>
@@ -418,13 +428,13 @@ $segment = $this->input->get('segment');
                             <tr>
                                 <td>Referral Score</td>
                                 <?php if (!empty($compare_list1)) { ?>
-                                <td><?php echo @$compare_list1[0]->referral_score; ?></td>
+                                <td><?php echo @$compare_list1[0]->referal_score; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list2)) { ?>
-                                <td><?php echo @$compare_list2[0]->referral_score; ?></td>
+                                <td><?php echo @$compare_list2[0]->referal_score; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list3)) { ?>
-                                <td><?php echo @$compare_list3[0]->referral_score; ?></td>
+                                <td><?php echo @$compare_list3[0]->referal_score; ?></td>
                                 <?php } ?>
                             </tr>
                             <tr>
