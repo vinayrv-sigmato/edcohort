@@ -659,6 +659,16 @@ Home
   top: 0;
 }
 
+.center-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Optional: Adjust the height as needed */
+}
+
+/* new added */
+
+
 /*.course-right{ width: calc(100% - 357px); } */
 .course-right {
   width: 100%;

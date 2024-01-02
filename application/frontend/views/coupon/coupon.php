@@ -285,56 +285,16 @@ $segment = $this->input->get('segment');
                                         placeholder="Your Name" value="<?php echo $coupon->coupon_count; ?>">
                                 </div>
 
-                                <!-- new added -->
 
-                                <div class="coupon-container mt-3">
-                                    <div class="confirm-buying">
-                                        <h3 class="mb-3">Confirm Buying</h3>
-                                        <div class=" coupon-options">
-                                            <?php foreach($coupon_records as $coupon): ?>
-                                            <label class="coupon-option">
-                                                <input type="radio" class="btn-check" name="confirm_buying"
-                                                    id="confirm_bying_<?php echo $coupon->coupon_id; ?>"
-                                                    onclick="couponConfirmBuying(<?php echo $coupon->coupon_id; ?>)"
-                                                    value="<?php echo $coupon->coupon_id; ?>">
-                                                <span
-                                                    class="btn btn-outline-primary"><?php echo $coupon->coupon_code; ?></span>
-                                            </label>
-                                            <?php endforeach; ?>
-                                        </div>
-                                    </div>
-
-                                    <div class="ready-buyers" style="display:none;">
-                                        <h3>Ready Buyers</h3>
-                                        <div class="buyer-counts">
-                                            <?php foreach($coupon_records as $coupon): ?>
-                                            <div class="buyer-count">
-                                                <span class="badge bg-primary"
-                                                    id="label_ready_buying_<?php echo $coupon->coupon_id; ?>">
-                                                    <?php echo $coupon->coupon_count; ?>
-                                                </span>
-                                            </div>
-                                            <?php endforeach; ?>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <input type="hidden" class="form-control" name="course" id="course"
-                                    value="<?php echo $product_list['0']->product_id; ?>">
-                                <input type="hidden" class="form-control" name="user_id" id="user_id"
-                                    value="<?php echo $this->session->userdata('user_id'); ?>">
-                                <input type="hidden" class="form-control" name="coupon_count" id="coupon_count"
-                                    value="<?php echo $coupon->coupon_count; ?>">
-
-                                <!-- new added end -->
                                 <br />
-                                <div class="btn-list text-right">
+                                <!-- <div class="btn-list text-right">
 
 
-                                </div>
+                                </div> -->
                             </div>
-                            <?php if($this->session->userdata('user_id')){ ?>
                             <div class="text-center">
+                                <?php if($this->session->userdata('user_id')){ ?>
+
                                 <button type=" button" onClick="conformCoupon()"
                                     class="btn btn-primary text-right btn-md mb-1">Get
                                     Your
@@ -355,15 +315,12 @@ $segment = $this->input->get('segment');
                                             fill="#A0A0A0" />
                                     </svg> Share</a>
                             </div>
-
-
                         </div>
+
                     </div>
-                    <!--center end-->
-
-
-
                 </div>
+                <!--center end-->
+
                 <!-- Review right side content -->
                 <div class="col-md-2">
                     <div class="review-right">
@@ -411,358 +368,361 @@ $segment = $this->input->get('segment');
                 </div>
                 <!-- Review right side content Ends-->
 
-                <!--end-->
+
+            </div>
+
+            <!--end-->
 
 
-                <div class="helpful-box">
-                    <div class="container">
+            <div class="helpful-box">
+                <div class="container">
 
-                        <h2 class="helpful-title">You might find this helpful!</h2>
+                    <h2 class="helpful-title">You might find this helpful!</h2>
 
-                        <div class="helpful-inner-box d-flex">
-                            <div class="helpful-left">
-                            </div>
-
-                            <div class="helpful-center">
-                                <h3>Article topic title related to Search “Byju’s”</h3>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum
-                                    has
-                                    been the
-                                    indus.....</p>
-                            </div>
-
-                            <div
-                                class="helpful-right d-flex flex-wrap justify-content-center align-items-center text-center">
-                                Quick Read<br /> 1 min
-                            </div>
+                    <div class="helpful-inner-box d-flex">
+                        <div class="helpful-left">
                         </div>
 
+                        <div class="helpful-center">
+                            <h3>Article topic title related to Search “Byju’s”</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum
+                                has
+                                been the
+                                indus.....</p>
+                        </div>
+
+                        <div
+                            class="helpful-right d-flex flex-wrap justify-content-center align-items-center text-center">
+                            Quick Read<br /> 1 min
+                        </div>
                     </div>
+
                 </div>
             </div>
-            <!--content end-->
         </div>
-        <!--wrapper end-->
+        <!--content end-->
+    </div>
+    <!--wrapper end-->
 
 
-        <script>
-        $(document).ready(function() {
+    <script>
+    $(document).ready(function() {
 
-            $('#category').change(function() {
-                var category_id = $('#category').val();
-                if (category_id != '') {
-                    $.ajax({
-                        url: "<?php echo base_url(); ?>get-class-list",
-                        method: "POST",
-                        data: {
-                            category_id: category_id
-                        },
-                        success: function(data) {
-                            $('#board').html(data);
-                            // $('#city').html('<option value="">Select City</option>');
-                        }
-                    });
-                } else {
-                    $('#state').html('<option value="">Select State</option>');
-                    $('#city').html('<option value="">Select City</option>');
-                }
-            });
-
-            $('#brand').change(function() {
-                var brand_id = $('#brand').val();
-                if (brand_id != '') {
-                    $.ajax({
-                        url: "<?php echo base_url(); ?>get-board-list",
-                        method: "POST",
-                        data: {
-                            brand_id: brand_id
-                        },
-                        success: function(data) {
-                            $('#board').html(data);
-                            // $('#city').html('<option value="">Select City</option>');
-                        }
-                    });
-                } else {
-                    // $('#state').html('<option value="">Select State</option>');
-                    // $('#city').html('<option value="">Select City</option>');
-                }
-            });
-
-            // $('#brand').change(function() {
-            //     var brand_id = $('#brand').val();
-            //     if (brand_id != '') {
-            //         $.ajax({
-            //             url: "<?php echo base_url(); ?>get-board-list",
-            //             method: "POST",
-            //             data: {
-            //                 brand_id: brand_id
-            //             },
-            //             success: function(data) {
-            //                 $('#board').html(data);
-            //                 // $('#city').html('<option value="">Select City</option>');
-            //             }
-            //         });
-            //     } else {
-            //        // $('#state').html('<option value="">Select State</option>');
-            //        // $('#city').html('<option value="">Select City</option>');
-            //     }
-            // });
-
-
-            $('#board').change(function() {
-                var brand_id = $('#brand').val();
-                var product_type = $('input[name="product_type"]:checked').val();
-                var board_id = $('#board').val();
-                //alert(product_type);
-                if (board_id != '') {
-                    $.ajax({
-                        url: "<?php echo base_url(); ?>get-class-list",
-                        method: "POST",
-                        data: {
-                            board_id: board_id,
-                            product_type: product_type,
-                            brand_id: brand_id
-                        },
-                        success: function(data) {
-                            $('#class').html(data);
-                        }
-                    });
-                }
-            });
-
-
-            $('#class').change(function() {
-                var brand_id = $('#brand').val();
-                var product_type = $('input[name="product_type"]:checked').val();
-                var board_id = $('#board').val();
-                var class_id = $('#class').val();
-                if (class_id != '') {
-                    $.ajax({
-                        url: "<?php echo base_url(); ?>get-batch-class",
-                        method: "POST",
-                        data: {
-                            board_id: board_id,
-                            product_type: product_type,
-                            brand_id: brand_id,
-                            class_id: class_id
-                        },
-                        success: function(data) {
-                            $('#batch').html(data);
-                        }
-                    });
-                }
-            });
-
-            // $('#board').change(function(){
-            //     var board_id = $('#board').val();
-            //     if(board_id != '')
-            //     {
-            //         $.ajax({
-            //             url:"<?php echo base_url(); ?>get-course-batch",
-            //             method:"POST",
-            //             data:{board_id:board_id},
-            //             success:function(data)
-            //             {
-            //                 $('#batch').html(data);
-            //             }
-            //         });
-            //     }
-            // }); 
-
-
-
-            // $('#state').change(function() {
-            //     var state_id = $('#state').val();
-            //     if (state_id != '') {
-            //         $.ajax({
-            //             url: "<?php echo base_url(); ?>dynamic_dependent/fetch_city",
-            //             method: "POST",
-            //             data: {
-            //                 state_id: state_id
-            //             },
-            //             success: function(data) {
-            //                 $('#city').html(data);
-            //             }
-            //         });
-            //     } else {
-            //         $('#city').html('<option value="">Select City</option>');
-            //     }
-            // });
-
-
-
-
+        $('#category').change(function() {
+            var category_id = $('#category').val();
+            if (category_id != '') {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>get-class-list",
+                    method: "POST",
+                    data: {
+                        category_id: category_id
+                    },
+                    success: function(data) {
+                        $('#board').html(data);
+                        // $('#city').html('<option value="">Select City</option>');
+                    }
+                });
+            } else {
+                $('#state').html('<option value="">Select State</option>');
+                $('#city').html('<option value="">Select City</option>');
+            }
         });
 
-        function productReviewReadMore(val) {
-            //Forward browser to new url
-            $("#reviewShort_" + val).hide();
-            $("#review-read_" + val).hide();
-            $("#reviewFull_" + val).show();
-
-
-        }
-
-        function productReviewReadShort(val) {
-            //Forward browser to new url
-            $("#reviewFull_" + val).hide();
-            $("#reviewShort_" + val).show();
-            $("#review-read_" + val).show();
-
-        }
-
-        function productReviewReplyReadMore(val) {
-            //Forward browser to new url
-            $("#reviewReplyShort_" + val).hide();
-            $("#reviewReplyFull_" + val).show();
-
-        }
-
-        function productReviewReplyReadShort(val) {
-            //Forward browser to new url
-            $("#reviewReplyFull_" + val).hide();
-            $("#reviewReplyShort_" + val).show();
-
-        }
-
-        function divShow(val) {
-            //Forward browser to new url
-            if ($('#commentDiv_' + val).css('display') == 'none') {
-                $('#commentDiv_' + val).css('display', 'block');
-            } else {
-                $('#commentDiv_' + val).css('display', 'none');
-            }
-
-        }
-
-        function productReviewLike(review_id, user_id, action) {
-            // alert(review_id+' '+user_id);  
-            //$(".alert-outline-success").hide();
-            //$("#text-message-success").html(''); 
-            //var value_form = $('#product_review').serialize();          
-            $.ajax({
-                url: base_url + 'review-like',
-                dataType: 'json',
-                type: 'post',
-                data: {
-                    review_id: review_id,
-                    user_id: user_id,
-                    action: action
-                },
-                success: function(data) {
-                    if (data.status == '1') {
-                        // alert('1'); 
-                        location.reload();
-                    } else if (data.status == '0') {
-                        //alert('0'); 
-                    }
-                },
-                beforeSend: function() {
-                    $("#global-loader").show();
-                    $("#body").addClass('opacity-body');
-                },
-                complete: function() {
-                    $("#global-loader").hide();
-                    $("#body").removeClass('opacity-body');
-                }
-            });
-
-        }
-
-        function productReviewReply(id) { // alert();  
-            //$(".alert-outline-success").hide();
-            //$("#text-message-success").html(''); 
-            var value_form = $('#product_review_reply_' + id).serialize();
-            $.ajax({
-                url: base_url + 'review-reply-submit',
-                dataType: 'json',
-                type: 'post',
-                data: value_form,
-                success: function(data) {
-                    if (data.status == '1') {
-                        $("#reg-message-success_" + id).show();
-                        $("#text-message-success_" + id).html(data.message);
-                        setTimeout(function() {
-                            $("#reg-message-success_" + id).hide();
-                            $("#text-message-success_" + id).html('');
-                            $("#reg-message-success_" + id).hide('blind', {}, 500)
-                        }, 5000);
-                    } else if (data.status == '0') {
-                        $("#reg-message-error_" + id).show();
-                        $("#text-message-error_" + id).html(data.message);
-                        setTimeout(function() {
-                            $("#reg-message-error_" + id).hide();
-                            $("#text-message-error_" + id).html('');
-                            $("#reg-message-error_" + id).hide('blind', {}, 500)
-                        }, 5000);
-                    }
-                },
-                beforeSend: function() {
-                    $("#global-loader").show();
-                    $("#body").addClass('opacity-body');
-                },
-                complete: function() {
-                    $("#global-loader").hide();
-                    $("#body").removeClass('opacity-body');
-                }
-            });
-
-        }
-
-
-        function prodcutType(val) {
-            //Some code
-            //alert(val);
-            var product_type = val;
+        $('#brand').change(function() {
             var brand_id = $('#brand').val();
-
-            if (product_type == 1) {
-                $("#offline-toggle").removeClass('active');
-                $("#online-toggle").addClass('active');
-
+            if (brand_id != '') {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>get-board-list",
+                    method: "POST",
+                    data: {
+                        brand_id: brand_id
+                    },
+                    success: function(data) {
+                        $('#board').html(data);
+                        // $('#city').html('<option value="">Select City</option>');
+                    }
+                });
             } else {
-                $("#online-toggle").removeClass('active');
-                $("#offline-toggle").addClass('active');
+                // $('#state').html('<option value="">Select State</option>');
+                // $('#city').html('<option value="">Select City</option>');
             }
+        });
 
-            $.ajax({
-                url: base_url + 'get-board-list',
-                dataType: 'json',
-                type: 'post',
-                data: {
-                    product_type: product_type,
-                    brand_id: brand_id
-                },
-                success: function(data) {
-                    $('#board').html(data);
-                    // $('#city').html('<option value="">Select City</option>');
-                },
-                beforeSend: function() {
-                    $("#global-loader").show();
-                    $("#body").addClass('opacity-body');
-                },
-                complete: function() {
-                    $("#global-loader").hide();
-                    $("#body").removeClass('opacity-body');
-                }
-            });
+        // $('#brand').change(function() {
+        //     var brand_id = $('#brand').val();
+        //     if (brand_id != '') {
+        //         $.ajax({
+        //             url: "<?php echo base_url(); ?>get-board-list",
+        //             method: "POST",
+        //             data: {
+        //                 brand_id: brand_id
+        //             },
+        //             success: function(data) {
+        //                 $('#board').html(data);
+        //                 // $('#city').html('<option value="">Select City</option>');
+        //             }
+        //         });
+        //     } else {
+        //        // $('#state').html('<option value="">Select State</option>');
+        //        // $('#city').html('<option value="">Select City</option>');
+        //     }
+        // });
+
+
+        $('#board').change(function() {
+            var brand_id = $('#brand').val();
+            var product_type = $('input[name="product_type"]:checked').val();
+            var board_id = $('#board').val();
+            //alert(product_type);
+            if (board_id != '') {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>get-class-list",
+                    method: "POST",
+                    data: {
+                        board_id: board_id,
+                        product_type: product_type,
+                        brand_id: brand_id
+                    },
+                    success: function(data) {
+                        $('#class').html(data);
+                    }
+                });
+            }
+        });
+
+
+        $('#class').change(function() {
+            var brand_id = $('#brand').val();
+            var product_type = $('input[name="product_type"]:checked').val();
+            var board_id = $('#board').val();
+            var class_id = $('#class').val();
+            if (class_id != '') {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>get-batch-class",
+                    method: "POST",
+                    data: {
+                        board_id: board_id,
+                        product_type: product_type,
+                        brand_id: brand_id,
+                        class_id: class_id
+                    },
+                    success: function(data) {
+                        $('#batch').html(data);
+                    }
+                });
+            }
+        });
+
+        // $('#board').change(function(){
+        //     var board_id = $('#board').val();
+        //     if(board_id != '')
+        //     {
+        //         $.ajax({
+        //             url:"<?php echo base_url(); ?>get-course-batch",
+        //             method:"POST",
+        //             data:{board_id:board_id},
+        //             success:function(data)
+        //             {
+        //                 $('#batch').html(data);
+        //             }
+        //         });
+        //     }
+        // }); 
+
+
+
+        // $('#state').change(function() {
+        //     var state_id = $('#state').val();
+        //     if (state_id != '') {
+        //         $.ajax({
+        //             url: "<?php echo base_url(); ?>dynamic_dependent/fetch_city",
+        //             method: "POST",
+        //             data: {
+        //                 state_id: state_id
+        //             },
+        //             success: function(data) {
+        //                 $('#city').html(data);
+        //             }
+        //         });
+        //     } else {
+        //         $('#city').html('<option value="">Select City</option>');
+        //     }
+        // });
+
+
+
+
+    });
+
+    function productReviewReadMore(val) {
+        //Forward browser to new url
+        $("#reviewShort_" + val).hide();
+        $("#review-read_" + val).hide();
+        $("#reviewFull_" + val).show();
+
+
+    }
+
+    function productReviewReadShort(val) {
+        //Forward browser to new url
+        $("#reviewFull_" + val).hide();
+        $("#reviewShort_" + val).show();
+        $("#review-read_" + val).show();
+
+    }
+
+    function productReviewReplyReadMore(val) {
+        //Forward browser to new url
+        $("#reviewReplyShort_" + val).hide();
+        $("#reviewReplyFull_" + val).show();
+
+    }
+
+    function productReviewReplyReadShort(val) {
+        //Forward browser to new url
+        $("#reviewReplyFull_" + val).hide();
+        $("#reviewReplyShort_" + val).show();
+
+    }
+
+    function divShow(val) {
+        //Forward browser to new url
+        if ($('#commentDiv_' + val).css('display') == 'none') {
+            $('#commentDiv_' + val).css('display', 'block');
+        } else {
+            $('#commentDiv_' + val).css('display', 'none');
         }
-        </script>
+
+    }
+
+    function productReviewLike(review_id, user_id, action) {
+        // alert(review_id+' '+user_id);  
+        //$(".alert-outline-success").hide();
+        //$("#text-message-success").html(''); 
+        //var value_form = $('#product_review').serialize();          
+        $.ajax({
+            url: base_url + 'review-like',
+            dataType: 'json',
+            type: 'post',
+            data: {
+                review_id: review_id,
+                user_id: user_id,
+                action: action
+            },
+            success: function(data) {
+                if (data.status == '1') {
+                    // alert('1'); 
+                    location.reload();
+                } else if (data.status == '0') {
+                    //alert('0'); 
+                }
+            },
+            beforeSend: function() {
+                $("#global-loader").show();
+                $("#body").addClass('opacity-body');
+            },
+            complete: function() {
+                $("#global-loader").hide();
+                $("#body").removeClass('opacity-body');
+            }
+        });
+
+    }
+
+    function productReviewReply(id) { // alert();  
+        //$(".alert-outline-success").hide();
+        //$("#text-message-success").html(''); 
+        var value_form = $('#product_review_reply_' + id).serialize();
+        $.ajax({
+            url: base_url + 'review-reply-submit',
+            dataType: 'json',
+            type: 'post',
+            data: value_form,
+            success: function(data) {
+                if (data.status == '1') {
+                    $("#reg-message-success_" + id).show();
+                    $("#text-message-success_" + id).html(data.message);
+                    setTimeout(function() {
+                        $("#reg-message-success_" + id).hide();
+                        $("#text-message-success_" + id).html('');
+                        $("#reg-message-success_" + id).hide('blind', {}, 500)
+                    }, 5000);
+                } else if (data.status == '0') {
+                    $("#reg-message-error_" + id).show();
+                    $("#text-message-error_" + id).html(data.message);
+                    setTimeout(function() {
+                        $("#reg-message-error_" + id).hide();
+                        $("#text-message-error_" + id).html('');
+                        $("#reg-message-error_" + id).hide('blind', {}, 500)
+                    }, 5000);
+                }
+            },
+            beforeSend: function() {
+                $("#global-loader").show();
+                $("#body").addClass('opacity-body');
+            },
+            complete: function() {
+                $("#global-loader").hide();
+                $("#body").removeClass('opacity-body');
+            }
+        });
+
+    }
+
+
+    function prodcutType(val) {
+        //Some code
+        //alert(val);
+        var product_type = val;
+        var brand_id = $('#brand').val();
+
+        if (product_type == 1) {
+            $("#offline-toggle").removeClass('active');
+            $("#online-toggle").addClass('active');
+
+        } else {
+            $("#online-toggle").removeClass('active');
+            $("#offline-toggle").addClass('active');
+        }
+
+        $.ajax({
+            url: base_url + 'get-board-list',
+            dataType: 'json',
+            type: 'post',
+            data: {
+                product_type: product_type,
+                brand_id: brand_id
+            },
+            success: function(data) {
+                $('#board').html(data);
+                // $('#city').html('<option value="">Select City</option>');
+            },
+            beforeSend: function() {
+                $("#global-loader").show();
+                $("#body").addClass('opacity-body');
+            },
+            complete: function() {
+                $("#global-loader").hide();
+                $("#body").removeClass('opacity-body');
+            }
+        });
+    }
+    </script>
 
 
 
 
-        <!--Section-->
+    <!--Section-->
 
-    </div>
-    <!--/Section-->
+</div>
+<!--/Section-->
 
 
 
-    <!--/Coursed Listings-->
+<!--/Coursed Listings-->
 
-    <script type="text/javascript"><!--
+<script type="text/javascript"><!--
 function doAction(val){
         //Forward browser to new url
         window.location= base_url+'coupon/' + val;
