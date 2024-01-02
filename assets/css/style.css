@@ -140,7 +140,7 @@ Header
   line-height: 23px;
 }
 
-.search-box {
+/* .search-box {
   position: relative;
   padding: 0 10px 0 25px;
   width: calc(100% - 147px);
@@ -155,13 +155,35 @@ Header
 }
 .search-submit {
   position: absolute;
-  right: 0px;
+  right: 100px;
   top: 0;
   background: #f0f3fa url(../images/search-icon.png) no-repeat center center;
   width: 50px;
   height: 100%;
   border: none;
   font-size: 0;
+  align-self: flex-end;
+}
+.search-box {
+  display: flex;
+  justify-content: space-between;
+} */
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-button {
+  border: none;
+  margin: 10px;
+  padding: 8px;
+  cursor: pointer;
 }
 
 .sign-btn,
@@ -2061,6 +2083,7 @@ background: linear-gradient(0deg, rgba(244,244,244,1) 0%, rgba(244,244,244,0.513
 .all-search-box {
   position: relative;
   margin-bottom: 30px;
+  border: 1px solid #000;
 }
 .all-search-input {
   width: 100%;
@@ -2091,9 +2114,23 @@ background: linear-gradient(0deg, rgba(244,244,244,1) 0%, rgba(244,244,244,0.513
   line-height: 23px;
   margin: 0 0 30px;
 }
+.search-container {
+  position: relative;
+  max-width: 300px; /* Adjust the width as needed */
+}
 
+.search-input {
+  padding-right: 35px; /* Space for the search icon */
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
 .all-col-box .popular-row {
-  border-left: 0.25px solid #ababab;
   margin-bottom: 30px;
 }
 .more-link {

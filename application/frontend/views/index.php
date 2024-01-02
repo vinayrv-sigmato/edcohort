@@ -554,7 +554,7 @@ if (empty($courseid)) {
                                     <hr>
                                     <a href="<?php echo base_url(); ?>review?course=<?php echo $r->product_id; ?>&segment=<?php echo $course; ?>"
                                         style="text-decoration:none; ">
-                                        <h6>VEIW PROGRAM</h6>
+                                        <h6>VIEW PROGRAM</h6>
                                     </a>
                                     <!-- <p class="card-text rating-number">
                                             <img src="<?php echo base_url(); ?>/assets/images/Star.png" alt="">3.2

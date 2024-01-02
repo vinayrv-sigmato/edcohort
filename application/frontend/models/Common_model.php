@@ -11,6 +11,7 @@ class Common_model extends CI_Model {
 	}
 	// +++++++ For Selection Of All Row +++++++++
 	function selectAll($table)
+
 	{
 			$this->db->select('*');
 			$this->db->from($table);		
@@ -319,7 +320,7 @@ class Common_model extends CI_Model {
         $where= '';
         $query = '';
         $where.=" c.segment_id = ".$id." and b.brand_id = c.product_brand";
-        $this->db->select('c.product_brand,b.brand_name,b.brand_image');
+        $this->db->select('c.product_brand,b.brand_name,b.brand_image,b.brand_id');
         $this->db->from('tbl_product c, tbl_brand b');
          $this->db->where($where);
         $this->db->group_by('b.brand_id');
@@ -372,6 +373,24 @@ class Common_model extends CI_Model {
         }
        
     }
+	function get_brands_detail($id)
+	{
+		$where= '';
+		$query = '';
+		$where.=" b.brand_id = ".$id;
+		$this->db->select('*');
+        $this->db->from('tbl_brand b');
+		$this->db->where($where);
+		$query=$this->db->get();
+		if($query)
+        {
+            return $query->result();
+        }
+        else
+        {
+            return $query;
+        }
+	}
 	 
 	 
 }

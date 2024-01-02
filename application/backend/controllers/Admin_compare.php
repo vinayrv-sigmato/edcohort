@@ -114,7 +114,7 @@ class admin_compare extends CI_Controller
             'student_rating'=>$student_rating,
             'status'=>$status,
             'created_by'=>$this->session->userdata('jw_admin_id'),          
-            'updated_on'=>date('Y-m-d H:i:s'),
+            'created_on'=>date('Y-m-d H:i:s'),
           );
          // print_R($data);
          // exit;

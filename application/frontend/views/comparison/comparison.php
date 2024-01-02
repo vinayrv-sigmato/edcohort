@@ -203,14 +203,20 @@ $segment = $this->input->get('segment');
                 ?>
                         <!--col-->
                         <?php if (!empty($compare_list1)) {
-                    foreach ($compare_list1 as $comp_list1) { ?>
+                    foreach ($compare_list1 as $comp_list1) {
+                       //print_R($comp_list1);
+                        $resp_brand_details1 =  get_brand_details($comp_list1->brand_id);
+                       if($resp_brand_details1)
+                       {
+                        ?>
                         <div class="popular-col">
-                            <a href="<?php echo $comp_list1->brand_slug; ?>">
+                            <a href="<?php echo $resp_brand_details1->brand_slug; ?>">
                                 <div class="popular-col-image"><img
-                                        src="<?php echo base_url(); ?>uploads/brand/<?php echo $comp_list1->brand_image; ?>"
+                                        src="<?php echo base_url(); ?>uploads/brand/<?php echo $resp_brand_details1->brand_image; ?>"
                                         alt="" /></div>
-                                <h3><?php echo $comp_list1->brand_name; ?></h3>
+                                <h3><?php echo $resp_brand_details1->brand_name; ?></h3>
                                 <div>
+                                    <!--
                                     <?php if ($comp_list1->overall_ranking == 1) { ?>
                                     <i class="fa fa-star text-yellow"></i><i class="fa fa-star"></i> <i
                                         class="fa fa-star"></i>
@@ -234,22 +240,29 @@ $segment = $this->input->get('segment');
                                     <i class="fa fa-star text-yellow"></i><i class="fa fa-star text-yellow"></i>
                                     <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i>
                                     <i class="fa fa-star text-yellow"></i>
-                                    <?php } ?>
+                                    <?php } ?> 
+                                    -->
                                 </div>
                             </a>
                         </div>
-                        <?php }
+                        <?php } }
                 } ?>
                         <!--col-->
                         <?php if (!empty($compare_list2)) {
-                    foreach ($compare_list2 as $comp_list2) { ?>
+                            print_R($compare_list2);
+                    foreach ($compare_list2 as $comp_list2) { 
+                        $resp_brand_details2 =  get_brand_details($comp_list1->brand_id);
+                       if($resp_brand_details2)
+                       {
+                        ?>
                         <div class="popular-col">
-                            <a href="<?php echo $comp_list2->brand_slug; ?>">
+                            <a href="<?php echo $resp_brand_details2->brand_slug; ?>">
                                 <div class="popular-col-image"><img
-                                        src="<?php echo base_url(); ?>uploads/brand/<?php echo $comp_list2->brand_image; ?>"
+                                        src="<?php echo base_url(); ?>uploads/brand/<?php echo $resp_brand_details2->brand_image; ?>"
                                         alt="" /></div>
                                 <h3><?php echo $comp_list2->brand_name; ?></h3>
                                 <div>
+                                    <!--
                                     <?php if ($comp_list2->overall_ranking == 1) { ?>
                                     <i class="fa fa-star text-yellow"></i><i class="fa fa-star"></i> <i
                                         class="fa fa-star"></i>
@@ -274,10 +287,11 @@ $segment = $this->input->get('segment');
                                     <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i>
                                     <i class="fa fa-star text-yellow"></i>
                                     <?php } ?>
+                                    -->
                                 </div>
                             </a>
                         </div>
-                        <?php }
+                        <?php } }
                 } ?>
                         <?php if (!empty($compare_list3)) {
                     foreach ($compare_list3 as $comp_list3) { ?>
@@ -576,7 +590,10 @@ $segment = $this->input->get('segment');
             </div> -->
                         <div class="popular-row">
                             <!--col-->
-                            <?php foreach ($brand_records as $brand) { ?>
+                            <?php 
+                            $res_brand_list = getseg_brand_list($segment);
+                            ?>
+                            <?php foreach ($res_brand_list as $brand) { ?>
                             <div class="popular-col">
                                 <a href="javascript:void(0)"
                                     onclick="compare_brand('<?php echo $brand->brand_name; ?>','<?php echo $brand->brand_id; ?>')">
@@ -587,7 +604,7 @@ $segment = $this->input->get('segment');
                                             src="<?php echo base_url(); ?>uploads/brand/<?php echo $brand->brand_image; ?>">
                                     </div>
                                     <h3><?php echo $brand->brand_name; ?></h3>
-                                    <div class="popular-col-rating">
+                                    <!--<div class="popular-col-rating">
                                         <div class="popular-star-rating">
                                             <?php if ($brand->overall_ranking == 1) { ?>
                                             <i class="fa fa-star text-yellow"></i><i class="fa fa-star"></i> <i
@@ -620,7 +637,7 @@ $segment = $this->input->get('segment');
                                         <span class="rating-number">
                                             <img src="<?php echo base_url(); ?>assets/images/Star.png" alt="">
                                             <?php echo $brand->overall_ranking; ?></span>
-                                    </div>
+                                    </div> -->
                                 </a>
                             </div>
                             <?php } ?>
@@ -997,12 +1014,13 @@ $segment = $this->input->get('segment');
                     var customer_rating = $('#customer_rating').val();
                     var date_posted = $('#date_posted').val();
                     var sort_by = $('#sort_by').val();
+                    var segment = $('#segment').val();
                     window.location = base_url + 'comparison?brandID=' + brandID + '&course=' + course +
                         '&brand=' +
                         brand + '&product_type=' + product_type + '&board=' + board + '&classid=' +
                         classid +
                         '&batch=' + batch + '&customer_rating=' + customer_rating + '&date_posted=' +
-                        date_posted;
+                        date_posted + '&segment=' + segment ;
                     //    $.ajax({
                     //         url:"<?php echo base_url(); ?>comparison-search",
                     //         method:"POST",
