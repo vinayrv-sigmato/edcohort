@@ -391,3 +391,20 @@ function getClassName($class_id)
         }
                 
     }
+
+    function get_brand_details($id)
+    {   $data = '';
+        $CI =& get_instance();
+        $c1="";
+        
+        $data=$CI->common_model->get_brands_detail($id);
+        if($data)
+        {
+            return $data[0];
+        }
+        else
+        {
+            $data = '';
+        }
+       
+    }
