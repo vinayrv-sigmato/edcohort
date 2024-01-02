@@ -668,7 +668,6 @@ Home
 
 /* new added */
 
-
 /*.course-right{ width: calc(100% - 357px); } */
 .course-right {
   width: 100%;
@@ -698,7 +697,13 @@ Home
   font-size: 16px;
   line-height: 21px;
 }
-
+.brand-row {
+  height: auto !important;
+}
+.small-image {
+  width: 50% !important;
+  height: 100px;
+}
 .popular-row {
   display: flex;
   flex-wrap: wrap;
@@ -971,6 +976,7 @@ ul.footer-menu-sub li {
   padding: 6px 13px 0;
   position: relative;
   z-index: 2;
+  display: flex;
 }
 
 .breadcrumb-design {
@@ -1958,10 +1964,10 @@ background: linear-gradient(0deg, rgba(244,244,244,1) 0%, rgba(244,244,244,0.513
 }
 .rating-number {
   display: inline-block;
-  background: #ffb802;
+  background: #ab47bc;
   padding: 4px 8px;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 20px;
   color: #fff;
   font-family: "DM Sans", sans-serif;
 }
@@ -3054,6 +3060,19 @@ background: linear-gradient(0deg, rgba(244,244,244,1) 0%, rgba(244,244,244,0.513
   line-height: 19px;
   color: #ffffff;
 }
+.compare-table {
+  font-weight: bold;
+  background-color: #f0f4c3 !important;
+}
+.first-column {
+  background-color: #c8e6c9 !important;
+}
+.second-column {
+  background-color: #ffccbc !important;
+}
+.thrid-column {
+  background-color: #b3e5fc !important;
+}
 .counselling-banner-content .rating-number {
   position: absolute;
   bottom: 10px;
@@ -3630,9 +3649,9 @@ input[type="text"] {
 }
 /*right-side-end*/
 @media (max-width: 650px) {
-  .container .card {
+  /* .container .card {
     max-width: 350px;
-  }
+  } */
   .container .card .right-side {
     width: 100%;
   }

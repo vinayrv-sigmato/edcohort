@@ -369,7 +369,7 @@
     line-height: 23px;
   }
   .search-box {
-    width: calc(100% - 80px);
+    /* width: calc(100% - 80px); */
     padding: 0 10px 0 10px;
   }
   .search-input {
@@ -412,6 +412,12 @@
   }
   .course-col-image img {
     vertical-align: top;
+  }
+  .course-name-display {
+    text-align: center;
+  }
+  .inner-banner {
+    display: block;
   }
   .course-col {
     width: auto;
