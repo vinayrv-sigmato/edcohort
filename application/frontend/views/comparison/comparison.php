@@ -350,7 +350,7 @@ $segment = $this->input->get('segment');
                     <div class="brand-review-table p-3">
                         <table class="table table-bordered text-center">
                             <tr>
-                                <th colspan="4">Overall</th>
+                                <th style="background:#ebf6ff" colspan=" 4">Overview</th>
                             </tr>
                             <tr>
                                 <?php
