@@ -125,17 +125,36 @@ $sort_by = $this->input->get('sort_by');
 <!--Logo Sectiont-->
 <!-- imageCarousell -->
 
-
+<!--* Start of BAnner Section  -->
+<?php $res_banner = get_banner_images(); ?>
 <div id="imageCarousel" class="carousel slide" data-ride="carousel" style="max-height: 600px; margin: 0 auto;">
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="https://img-c.udemycdn.com/notices/web_carousel_slide/image/e6cc1a30-2dec-4dc5-b0f2-c5b656909d5b.jpg"
-                class="d-block w-100" alt="Image 1" style="max-height:500px; width: auto; object-fit:cover;">
-        </div>
-        <div class="carousel-item">
-            <img src="https://img-c.udemycdn.com/notices/web_carousel_slide/image/10ca89f6-811b-400e-983b-32c5cd76725a.jpg"
-                class="d-block w-100" alt="Image 2" style="max-height:500px; width: auto; object-fit:cover;">
-        </div>
+        <?php
+        if($res_banner)
+        {
+            $i=1;
+            foreach($res_banner as $b)
+            {
+                if($i==1)
+                {
+                 ?>
+                <div class="carousel-item active">
+                    <img src="<?php echo base_url(); ?>uploads/banner/<?php echo $b->home_slider_image; ?>" class="d-block w-100" alt="Image 1" style="max-height:500px; width: auto; object-fit:cover;">
+                </div>
+            <?php
+            }
+            else{
+                    ?>
+                      <div class="carousel-item ">
+                    <img src="<?php echo base_url(); ?>uploads/banner/<?php echo $b->home_slider_image; ?>" class="d-block w-100" alt="Image 1" style="max-height:500px; width: auto; object-fit:cover;">
+                </div>
+                    <?php
+            }
+            $i++;
+        }
+        }
+        ?>
+        
         <!-- <div class="carousel-item">
             <img src="https://placekitten.com/800/402" class="d-block w-100" alt="Image 3"
                 style="max-height:500px; width: auto;object-fit:cover;">
@@ -150,7 +169,7 @@ $sort_by = $this->input->get('sort_by');
         <span class="sr-only">Next</span>
     </a>
 </div>
-
+<!--* End of BAnner Section  -->
 
 <div class="pt-5 logo-content brand-align">
     <h2>Top Brands</h2>

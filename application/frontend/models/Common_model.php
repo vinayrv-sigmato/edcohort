@@ -391,6 +391,22 @@ class Common_model extends CI_Model {
             return $query;
         }
 	}
+
+	function get_banner_images()
+	{
+		$query = '';
+		$this->db->select('*');
+		$this->db->from('tbl_home_slider');
+		$query = $this->db->get();
+		if($query)
+		{
+			return $query->result();
+		}
+		else
+		{
+			return $query;
+		}
+	}
 	 
 	 
 }
