@@ -45,7 +45,7 @@
                                                         <td><?php echo $cnt; ?></td>
                                                         <td><?php echo ucfirst(get_segemnt($rec->segment_id)); ?></td>
                                                         <td><?php echo ucfirst(getBrandList($rec->brand_id)); ?></td>
-                                                        <td><?php if($rec->status == 'active'){ ?>
+                                                        <td><?php if($rec->status == '1'){ ?>
                                                                 <a href="javascript:void(0)" class="btn btn-success btn-sm">Active</a>
                                                             <?php }else{ ?>
                                                                 <a href="javascript:void(0)" class="btn btn-warning btn-sm">Inactive</a>

@@ -18,9 +18,9 @@ $breadcrumb_name1 = '';
 $breadcrumb_name2 = '';
 
 if($get_breadcrumb)
-{
+{   
     $breadcrumb_name1 = $get_breadcrumb->breadcrumb1_name;
-     $breadcrumb_name2 = $get_breadcrumb->breadcrumb2_name;
+    $breadcrumb_name2 = $get_breadcrumb->breadcrumb2_name;
 }
 ?>
 <div class="inner-banner ">

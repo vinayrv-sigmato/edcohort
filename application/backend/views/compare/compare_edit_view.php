@@ -251,8 +251,8 @@
                                                     </div>
                                                     <div class="col-md-9">
                                                         <select class="form-control" name="status" id="status" required>
-                                                        <option value="active" <?php if ($compare->status==1) { echo 'selected'; } ?> >Active</option>
-                                                            <option value="inactive" <?php if ($compare->status==2) { echo 'selected'; } ?>>Inactive</option>
+                                                        <option value="1" <?php if ($compare->status==1) { echo 'selected'; } ?> >Active</option>
+                                                            <option value="2" <?php if ($compare->status==2) { echo 'selected'; } ?>>Inactive</option>
                                                         </select>
                                                     </div>
                                                 </div>

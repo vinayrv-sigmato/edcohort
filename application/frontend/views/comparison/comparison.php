@@ -350,11 +350,11 @@ $segment = $this->input->get('segment');
                     <div class="brand-review-table p-3">
                         <table class="table table-bordered text-center">
                             <tr>
-                                <th style="background:#ebf6ff" colspan=" 4">Overview</th>
+                                <th colspan="4">Overall</th>
                             </tr>
                             <tr>
                                 <?php
-                                //print_R($compare_list1);
+                                ////print_R($compare_list1);
                                 ?>
                                 <td class="compare-table"> Overall ratings</td>
                                 <?php if (!empty($compare_list1)) { ?>
