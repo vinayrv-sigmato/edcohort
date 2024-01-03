@@ -117,7 +117,7 @@
                             an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of
                             the printing and typesetting industry</p>
                     </div>
-                    <div class="select-time-box">
+                    <div class="    ">
                         <a href="javascript:void(0)" class="time-btn mb-4" data-bs-dismiss="modal"
                             data-bs-toggle="modal"
                             data-bs-target="#TimeModal"><?php echo date('d-M-Y',strtotime($counselling->c_date)); ?>
@@ -156,8 +156,8 @@
                                                 <span>CVV</span>
                                             </div>
                                         </div>
-                                        <div class="button">
-                                            <button class="click-pay">Pay $25.99</button>
+                                        <div class="button text-center">
+                                            <button class="click-pay fw-bold">Pay $25.99</button>
                                         </div>
                                     </div>
                                 </div>

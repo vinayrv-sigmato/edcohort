@@ -98,8 +98,9 @@
     font-size: 16px;
   }
   .time-box {
-    width: 200px;
-    padding: 20px 20px;
+    background: none;
+    width: 100%;
+    padding: 1px 1px;
   }
   .time-box h2 {
     font-size: 60px;
@@ -260,6 +261,9 @@
   .progress-bar div span {
     font-size: 16px;
     bottom: -35px;
+  }
+  .write-review-icon {
+    margin-bottom: 12px;
   }
   .star-box {
     margin-bottom: 70px;

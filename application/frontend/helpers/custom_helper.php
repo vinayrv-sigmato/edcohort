@@ -408,3 +408,18 @@ function getClassName($class_id)
         }
        
     }
+
+    function get_banner_images()
+    {
+        $data = '';
+        $CI =& get_instance();
+        $data=$CI->common_model->get_banner_images();
+        if($data)
+        {
+            return $data;
+        }
+        else
+        {
+            $data = '';
+        }
+    }
