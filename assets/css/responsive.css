@@ -809,6 +809,9 @@
   .tab-link ul {
     margin: 0 0 10px;
   }
+  .write-review-icon {
+    margin-bottom: 20px;
+  }
 }
 
 @media only screen and (max-width: 480px) {

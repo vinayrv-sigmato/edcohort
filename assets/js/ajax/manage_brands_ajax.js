@@ -112,8 +112,9 @@ function loadMoreData(url_data) {
         }
 
         if (display === "grid") {
-          html += '<div class="col-md-3 mb-4">'; // Adjust the column size and margin based on your layout needs
+          html += '<div class="col-md-3 mb-4 brand-grid">'; // Adjust the column size and margin based on your layout needs
           html += '<div class="card brand-row">';
+          html += '<div class="card-image-brand">';
           html +=
             '<img src="' +
             base_url +
@@ -122,6 +123,7 @@ function loadMoreData(url_data) {
             '" class="card-img-top small-image" alt="' +
             brand_name +
             '">';
+          html += "</div>";
           html += '<div class="card-body">';
           html +=
             '<h5 class="card-title"><a href="' +
@@ -129,7 +131,7 @@ function loadMoreData(url_data) {
             '">' +
             brand_name +
             "</a></h5>";
-          html += "<div></div>";
+
           html += '<div class="popular-col-rating">';
           html +=
             '<div class="popular-star-rating"><img src="' +
