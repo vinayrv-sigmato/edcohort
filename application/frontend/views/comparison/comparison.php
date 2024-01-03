@@ -12,7 +12,7 @@ $segment = $this->input->get('segment');
 // print_ex($_GET);
 ?>
 <!--banner start-->
-<div class="inner-banner d-flex">
+<div class="inner-banner">
     <div class="col-md-3 breadcrumb-design">
         <div class="breadcrumb">
             <ul>
@@ -76,7 +76,7 @@ $segment = $this->input->get('segment');
                     <h4> Excellent Based on 155 - Review </h4>
                 </div>
             </div>
-            <div class="col-md-4 pt-3 write-review-icon ">
+            <div class="col-md-4 pt-3 write-review-icon mb-3">
                 <a href="<?php echo base_url(); ?>write-a-review?course=<?php echo @$course; ?>&segment=<?php echo $segment; ?>&brand=<?php echo $brandID; ?>&product_type=<?php echo  $product_type; ?>&board=<?php echo $board; ?>&class=<?php echo $class; ?>&batch=<?php echo $batch; ?>&customer_rating=<?php echo  $customer_rating; ?>&date=<?php echo $date_posted; ?>&sort_by=<?php echo $sort_by; ?>"
                     class="review-btns text-decoration-none">
                     <i class="fa-solid fa-circle-user fa-2xl design-user"></i> <span> Write a review </span>
@@ -190,9 +190,9 @@ $segment = $this->input->get('segment');
             <div class="col-md-8">
 
                 <div class="review-center">
-                    <div class="review-btn-box">
+                    <!-- <div class="review-btn-box">
 
-                    </div>
+                    </div> -->
                     <!-- <div class="review-btn-box">
                 <button type="button" class="review-btn" data-bs-toggle="modal" data-bs-target="#compareModal"><img
                         src="<?php echo base_url(); ?>assets/images/review-icon2.png" alt=""> Add a brand to
@@ -348,138 +348,143 @@ $segment = $this->input->get('segment');
                         <?php } ?>
                     </div>
                     <div class="brand-review-table p-3">
-                        <table>
+                        <table class="table table-bordered text-center">
                             <tr>
-                                <th colspan="4">Overview</th>
+                                <th style="background:#ebf6ff" colspan=" 4">Overview</th>
                             </tr>
                             <tr>
                                 <?php
-                                //print_R($compare_list1);
+                                ////print_R($compare_list1);
                                 ?>
-                                <td>Overall ratings</td>
+                                <td class="compare-table"> Overall ratings</td>
                                 <?php if (!empty($compare_list1)) { ?>
-                                <td><span
-                                        class="rating-number"><?php echo @$compare_list1[0]->overall_brand; ?></span>
+                                <td class="first-column"><span
+                                        class="rating-number"><?php echo @$compare_list1[0]->overall_brand; ?> /
+                                        10
+                                    </span>
                                 </td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list2)) { ?>
-                                <td><span
-                                        class="rating-number"><?php echo @$compare_list2[0]->overall_brand; ?></span>
+                                <td class="second-column"><span
+                                        class="rating-number"><?php echo @$compare_list2[0]->overall_brand; ?>
+                                        /
+                                        10</span>
                                 </td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list3)) { ?>
-                                <td><span
-                                        class="rating-number"><?php echo @$compare_list3[0]->overall_brand; ?></span>
+                                <td class="thrid-column"><span
+                                        class="rating-number"><?php echo @$compare_list3[0]->overall_brand; ?> /
+                                        10</span>
                                 </td>
                                 <?php } ?>
                             </tr>
 
-                            <tr>
+                            <!-- <tr>
                                 <th colspan="4">Faculty</th>
-                            </tr>
+                            </tr> -->
                             <tr>
-                                <td>Faculty</td>
+                                <td class="compare-table">Faculty</td>
                                 <?php if (!empty($compare_list1)) { ?>
-                                <td><?php echo @$compare_list1[0]->faculty_quality; ?></td>
+                                <td class="first-column"><?php echo @$compare_list1[0]->faculty_quality; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list2)) { ?>
-                                <td><?php echo @$compare_list2[0]->faculty_quality; ?></td>
+                                <td class="second-column"><?php echo @$compare_list2[0]->faculty_quality; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list3)) { ?>
-                                <td><?php echo @$compare_list3[0]->faculty_quality; ?></td>
+                                <td class="thrid-column"><?php echo @$compare_list3[0]->faculty_quality; ?></td>
                                 <?php } ?>
                             </tr>
 
-                            <tr>
+                            <!-- <tr>
                                 <th colspan="4">Aging of Co.</th>
-                            </tr>
+                            </tr> -->
                             <tr>
-                                <td>Aging of Co.</td>
+                                <td class="compare-table">Aging of Co.</td>
                                 <?php if (!empty($compare_list1)) {
                             //print_R($compare_list1);
                             ?>
-                                <td><?php echo @$compare_list1[0]->aging; ?></td>
+                                <td class="first-column"><?php echo @$compare_list1[0]->aging; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list2)) { ?>
-                                <td><?php echo @$compare_list2[0]->aging; ?></td>
+                                <td class="second-column"><?php echo @$compare_list2[0]->aging; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list3)) { ?>
-                                <td><?php echo @$compare_list3[0]->aging; ?></td>
+                                <td class="thrid-column"><?php echo @$compare_list3[0]->aging; ?></td>
                                 <?php } ?>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th colspan="4">Academic Results</th>
-                            </tr>
+                            </tr> -->
                             <tr>
-                                <td>Academic Results</td>
+                                <td class="compare-table">Academic Results</td>
                                 <?php if (!empty($compare_list1)) { ?>
-                                <td><?php echo @$compare_list1[0]->acadmic_quality; ?></td>
+                                <td class="first-column"><?php echo @$compare_list1[0]->acadmic_quality; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list2)) { ?>
-                                <td><?php echo @$compare_list2[0]->acadmic_quality; ?></td>
+                                <td class="second-column"><?php echo @$compare_list2[0]->acadmic_quality; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list3)) { ?>
-                                <td><?php echo @$compare_list3[0]->acadmic_quality; ?></td>
+                                <td class="thrid-column"><?php echo @$compare_list3[0]->acadmic_quality; ?></td>
                                 <?php } ?>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th colspan="4">Referral Score</th>
-                            </tr>
+                            </tr> -->
                             <tr>
-                                <td>Referral Score</td>
+                                <td class="compare-table">Referral Score</td>
                                 <?php if (!empty($compare_list1)) { ?>
-                                <td><?php echo @$compare_list1[0]->referal_score; ?></td>
+                                <td class="first-column"><?php echo @$compare_list1[0]->referal_score; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list2)) { ?>
-                                <td><?php echo @$compare_list2[0]->referal_score; ?></td>
+                                <td class="second-column"><?php echo @$compare_list2[0]->referal_score; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list3)) { ?>
-                                <td><?php echo @$compare_list3[0]->referal_score; ?></td>
+                                <td class="thrid-column"><?php echo @$compare_list3[0]->referal_score; ?></td>
                                 <?php } ?>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th colspan="4">Complaint Score</th>
-                            </tr>
+                            </tr> -->
                             <tr>
-                                <td>Complaint Score</td>
+                                <td class="compare-table">Complaint Score</td>
                                 <?php if (!empty($compare_list1)) { ?>
-                                <td><?php echo @$compare_list1[0]->complaint_score; ?></td>
+                                <td class="first-column"><?php echo @$compare_list1[0]->complaint_score; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list2)) { ?>
-                                <td><?php echo @$compare_list2[0]->complaint_score; ?></td>
+                                <td class="second-column"><?php echo @$compare_list2[0]->complaint_score; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list3)) { ?>
-                                <td><?php echo @$compare_list3[0]->complaint_score; ?></td>
+                                <td class="thrid-column"><?php echo @$compare_list3[0]->complaint_score; ?></td>
                                 <?php } ?>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th colspan="4">Market Reputation</th>
-                            </tr>
+                            </tr> -->
                             <tr>
-                                <td>Market Reputation</td>
+                                <td class="compare-table">Market Reputation</td>
                                 <?php if (!empty($compare_list1)) { ?>
-                                <td><?php echo @$compare_list1[0]->market_reputation; ?></td>
+                                <td class="first-column"><?php echo @$compare_list1[0]->market_reputation; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list2)) { ?>
-                                <td><?php echo @$compare_list2[0]->market_reputation; ?></td>
+                                <td class="second-column"><?php echo @$compare_list2[0]->market_reputation; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list3)) { ?>
-                                <td><?php echo @$compare_list3[0]->market_reputation; ?></td>
+                                <td class="thrid-column"><?php echo @$compare_list3[0]->market_reputation; ?></td>
                                 <?php } ?>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th colspan="4">Edcohort Rating</th>
-                            </tr>
+                            </tr> -->
                             <tr>
-                                <td>Edcohort Rating</td>
+                                <td class="compare-table">Edcohort Rating</td>
                                 <?php if (!empty($compare_list1)) { ?>
-                                <td><?php echo @$compare_list1[0]->edcohort_rating; ?></td>
+                                <td class="first-column"><?php echo @$compare_list1[0]->edcohort_rating; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list2)) { ?>
-                                <td><?php echo @$compare_list2[0]->edcohort_rating; ?></td>
+                                <td class="second-column"><?php echo @$compare_list2[0]->edcohort_rating; ?></td>
                                 <?php } ?>
                                 <?php if (!empty($compare_list3)) { ?>
-                                <td><?php echo @$compare_list3[0]->edcohort_rating; ?></td>
+                                <td class="thrid-column"><?php echo @$compare_list3[0]->edcohort_rating; ?></td>
                                 <?php } ?>
                             </tr>
 
@@ -1030,7 +1035,7 @@ $segment = $this->input->get('segment');
                         brand + '&product_type=' + product_type + '&board=' + board + '&classid=' +
                         classid +
                         '&batch=' + batch + '&customer_rating=' + customer_rating + '&date_posted=' +
-                        date_posted + '&segment=' + segment ;
+                        date_posted + '&segment=' + segment;
                     //    $.ajax({
                     //         url:"<?php echo base_url(); ?>comparison-search",
                     //         method:"POST",
