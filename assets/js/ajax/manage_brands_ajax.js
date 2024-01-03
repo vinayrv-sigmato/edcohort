@@ -112,8 +112,8 @@ function loadMoreData(url_data) {
         }
 
         if (display === "grid") {
-          html += '<div class="col-md-3 mb-4 brand-grid">'; // Adjust the column size and margin based on your layout needs
-          html += '<div class="card brand-row">';
+          html += '<div class="col-md-3 mb-4 brand-card">'; // Adjust the column size and margin based on your layout needs
+          html += '<div class="card brand-row ">';
           html += '<div class="card-image-brand">';
           html +=
             '<img src="' +
