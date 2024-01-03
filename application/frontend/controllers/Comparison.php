@@ -49,7 +49,7 @@ class comparison extends CI_Controller {
     $where = 'brand_id = '."'".$compare_id['1']."'";
     $data['compare_list2'] = $this->common_model->selectWhere('tbl_brand',$where);*/
 
-    
+   
   //}
   if(!empty($compare_id['0'])){
     $cmp0 = $compare_id['0'];
@@ -58,15 +58,15 @@ class comparison extends CI_Controller {
   }
   if(!empty($compare_id['1'])){
     $cmp1 = $compare_id['1'];
-    $where = "segment_id = $segment and brand_id= $cmp0";
-    $data['compare_list1'] = $this->common_model->selectWhere('tbl_brand_compare',$where);
+    $where = "segment_id = $segment and brand_id= $cmp1";
+    $data['compare_list2'] = $this->common_model->selectWhere('tbl_brand_compare',$where);
   }
   if(!empty($compare_id['2'])){
-    $cmp1 = $compare_id['2'];
-    $where = "segment_id = $segment and brand_id= $cmp0";
-    $data['compare_list1'] = $this->common_model->selectWhere('tbl_brand_compare',$where);
+    $cmp2 = $compare_id['2'];
+    $where = "segment_id = $segment and brand_id= $cmp2";
+    $data['compare_list3'] = $this->common_model->selectWhere('tbl_brand_compare',$where);
   }
-  //print_R( $data['compare_list1'] );
+  //print_R( $data['compare_list3'] );
   //exit;
   /*if(!empty($compare_id['2'])){
     $where = 'brand_id = '."'".$compare_id['2']."'";

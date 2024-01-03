@@ -18,12 +18,12 @@ $breadcrumb_name1 = '';
 $breadcrumb_name2 = '';
 
 if($get_breadcrumb)
-{
+{   
     $breadcrumb_name1 = $get_breadcrumb->breadcrumb1_name;
-     $breadcrumb_name2 = $get_breadcrumb->breadcrumb2_name;
+    $breadcrumb_name2 = $get_breadcrumb->breadcrumb2_name;
 }
 ?>
-<div class="inner-banner d-flex">
+<div class="inner-banner ">
     <div class="col-md-3 breadcrumb-design">
         <div class="breadcrumb">
             <ul>
@@ -83,7 +83,7 @@ if($get_breadcrumb)
                     <h4> Excellent Based on 155 - Review </h4>
                 </div>
             </div>
-            <div class="col-md-4 pt-3 write-review-icon ">
+            <div class="col-md-4 pt-3 write-review-icon mb-3">
                 <a href="<?php echo base_url();?>write-a-review?course=<?php echo @$course; ?>&segment=<?php echo $segment;?>&brand=<?php echo $brandID;?>&product_type=<?php echo  $product_type; ?>&board=<?php echo $board;?>&class=<?php echo $class;?>&batch=<?php echo $batch; ?>&customer_rating=<?php echo  $customer_rating; ?>&date=<?php echo $date_posted; ?>&sort_by=<?php echo $sort_by; ?>"
                     class="review-btns text-decoration-none">
                     <i class="fa-solid fa-circle-user fa-2xl design-user"></i> <span> Write a review </span> <label

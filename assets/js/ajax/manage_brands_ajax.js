@@ -111,22 +111,24 @@ function loadMoreData(url_data) {
           var brand_image = "";
         }
 
-        if (display == "grid") {
-          // html +='<div class="popular-col">';
-          // html +='<div class="popular-col-image"><img src="'+base_url+'uploads/brand/'+brand_image+'" alt=""></div>';
-          // html +='<h3><a href="'+brand_slug+'">'+brand_name+'</a></h3>';
-          // html +='<div></div>';
-          // html +='</div>';
-
-          html += '<div class="popular-col">';
-          html += '<a href="' + brand_name + '">';
+        if (display === "grid") {
+          html += '<div class="col-md-3 mb-4">'; // Adjust the column size and margin based on your layout needs
+          html += '<div class="card brand-row">';
           html +=
-            '<div class="popular-col-image"><img src="' +
+            '<img src="' +
             base_url +
             "uploads/brand/" +
             brand_image +
-            '" alt=""></div>';
-          html += "<h3>" + brand_slug + "</h3>";
+            '" class="card-img-top small-image" alt="' +
+            brand_name +
+            '">';
+          html += '<div class="card-body">';
+          html +=
+            '<h5 class="card-title"><a href="' +
+            brand_slug +
+            '">' +
+            brand_name +
+            "</a></h5>";
           html += "<div></div>";
           html += '<div class="popular-col-rating">';
           html +=
@@ -138,7 +140,8 @@ function loadMoreData(url_data) {
             base_url +
             'assets/images/Star.png" alt="">3.2</span>';
           html += "</div>";
-          html += "</a>";
+          html += "</div>";
+          html += "</div>";
           html += "</div>";
         }
       }
