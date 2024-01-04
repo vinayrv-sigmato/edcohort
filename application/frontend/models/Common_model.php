@@ -408,6 +408,44 @@ class Common_model extends CI_Model {
 		}
 	}
 	 
+	function get_single_coure_detail($course_id)
+	{
+		$where= '';
+        $query = '';
+        $where.=" c.product_id = ".$course_id." and c.product_id = i.product_id";
+        $this->db->select('c.product_id,c.product_name,c.product_rating,i.product_image');
+        $this->db->from('tbl_product c, tbl_product_image i');
+        $this->db->where($where);
+        $query=$this->db->get();
+		if($query)
+		{
+			return $query->result();
+		}
+		else
+		{
+			return $query;
+		}
+	}
+
+	function get_brand_compare_detail($course_id,$segment_id)
+	{
+	
+		$where= '';
+        $query = '';
+        $where.=" b.product_id =".$course_id." and  c.brand_id = b.product_brand and c.segment_id = ".$segment_id;
+        $this->db->select('c.aging,c.overall_brand,c.faculty_quality,c.course_quality,c.acadmic_quality,c.referal_score');
+        $this->db->from('tbl_brand_compare c, tbl_product b');
+        $this->db->where($where);
+        $query=$this->db->get();
+		if($query)
+		{
+			return $query->result();
+		}
+		else
+		{
+			return $query;
+		}
+	}
 	 
 }
 ?>

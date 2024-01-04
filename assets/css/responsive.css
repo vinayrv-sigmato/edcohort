@@ -120,6 +120,11 @@
   .header {
     flex-wrap: wrap;
   }
+  .card-img-top
+  {
+    width: auto;
+    height: auto;
+  }
   .header-search {
     order: 3;
     width: 100%;
