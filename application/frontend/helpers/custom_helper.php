@@ -423,3 +423,33 @@ function getClassName($class_id)
             $data = '';
         }
     }
+
+    function get_single_coure_detail($course_id)
+    {
+        $data = '';
+        $CI =& get_instance();
+        $data=$CI->common_model->get_single_coure_detail($course_id);
+        if($data)
+        {
+            return $data[0];
+        }
+        else
+        {
+            $data = '';
+        }
+    }
+
+    function get_brand_compare_detail($course_id,$segment_id)
+    {
+        $data = '';
+        $CI =& get_instance();
+        $data=$CI->common_model->get_brand_compare_detail($course_id,$segment_id);
+        if($data)
+        {
+            return $data[0];
+        }
+        else
+        {
+            $data = '';
+        }
+    }

@@ -46,11 +46,11 @@ class Review_model extends CI_Model {
   { 
       $result = '';
       $item = new stdClass;
-      $query = $this->db->query("select p.product_name,c.title from tbl_product p , tbl_class c where p.product_id= '$product_id' and c.class_id = p.class_id");
+      $query = $this->db->query("select p.product_name,c.brand_name from tbl_product p , tbl_brand c where p.product_id= '$product_id' and c.brand_id  = p.product_brand");
       $result = $query->result();
       if($result)
       {         
-             $item->breadcrumb1_name = $result[0]->title;
+             $item->breadcrumb1_name = $result[0]->brand_name;
              $item->breadcrumb1_url = $result[0]->product_name;
              $item->breadcrumb2_name = $result[0]->product_name;
              $item->breadcrumb2_url = $result[0]->product_name;
